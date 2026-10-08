@@ -7,6 +7,7 @@ reload shows the same outcome instead of rolling again."""
 from app.game import data
 from app.game.data import CHAMPION_NAMES, CHAMPIONS, main_role_pool
 from app.game.power import (
+    SIGNATURE_TIERS,
     XP_PER_LEVEL,
     champion_parts,
     champion_power,
@@ -266,7 +267,7 @@ def _build_opponent(run: RunState, rng: Rng, code: str, level: int) -> dict[Role
         elif rng.chance(sig_chance):
             sigs = [c for c in signatures_of(player, role) if c not in used]
             # earlier entries are more iconic, so they show up more often
-            bag = [c for i, c in enumerate(sigs) for _ in range(5 - i)]
+            bag = [c for i, c in enumerate(sigs) for _ in range(SIGNATURE_TIERS[i])]
             champ = rng.pick(bag)
         if champ is None:
             pool = [c for c in main_role_pool(role) if c not in used]

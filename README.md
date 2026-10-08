@@ -79,7 +79,7 @@ The run view carries the pending step (`first`, `pick`, `fight`, `match` or `sta
 
 **Power.** Every champion is one number. It is 20 at level 1 and grows by 2 per level, up to level 18, or 20 for whoever plays top. On top of that comes the champion's focus. Early game champions start 6 ahead and slide to 6 behind by level 18, late game champions start 4 behind and finish 11 ahead, and mid game champions peak around the middle with up to 2.
 
-**Bonuses.** A champion outside its own roles loses 6. Each player has five signature champions worth +5 down to +1 when that player plays one in their own role. A full team that is all AD or all AP loses 3 on every champion. Mixed damage champions break that streak.
+**Bonuses.** A champion outside its own roles loses 6. Each player has up to ten signature champions, the ones they have played most in their pro career in that role. The most played is worth +5, then +4, +3, +3, +2, +2 and +1 for the last four, when that player plays it in their own role. A full team that is all AD or all AP loses 3 on every champion. Mixed damage champions break that streak.
 
 **Synergy.** Two champions can give each other power, and both of them get it. The value is multiplied by the pair of slots: triple for the bot lane, double for jungle and mid, single anywhere else. There are two kinds. A list of hand-picked duos, such as Xayah and Rakan or Kalista and Renata Glasc, gives +1 or +2, and a few known bad pairs subtract. On top of that, archetypes fire by type for a pair of slots, at +1 before the weighting:
 
@@ -138,7 +138,7 @@ Play-In XP is scaled down to 35 percent so its winner does not arrive in the Swi
 
 ## Data
 
-The 19 rosters are the 2026 World Championship lineups. The champion pool has 157 champions, each with its roles, focus, damage type and class. Signature lists are hand-picked for 37 well-known players, and every other player gets a stable list generated from their role's pool. The 53 duo synergies and the lane matchups are approximations written for this game, not statistics pulled from a live source.
+The 19 rosters are the 2026 World Championship lineups. The champion pool has 157 champions, each with its roles, focus, damage type and class. Signature champions are each player's most played champions in their role over their professional career, counted from gol.gg's career statistics by `scripts/fetch_signatures.py` and stored in `app/game/signatures.json`. Hand-picked lists for 37 well-known players remain as a fallback for anyone the data has nothing for. The 53 hand-picked duo synergies and the lane matchups are approximations written for this game, not statistics pulled from a live source.
 
 ## Saving and determinism
 
@@ -176,7 +176,12 @@ app/
     ├── engine.py    the tournament: maps, picks, fights, matches, bracket
     └── views.py     the run as the client sees it
 scripts/simulate.py  balance simulation
+scripts/fetch_signatures.py  signature data from gol.gg
 tests/               engine and API tests
 ```
+
+To refresh the signature data after roster changes, run `python -m scripts.fetch_signatures`. The script waits a few seconds between requests, so a full run takes about five minutes.
+
+Career champion statistics come from [gol.gg](https://gol.gg), Games of Legends.
 
 Riftlike is a fan project. It is not affiliated with or endorsed by Riot Games. League of Legends and all related names are trademarks of Riot Games.

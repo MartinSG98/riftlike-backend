@@ -1,7 +1,9 @@
 """Static game data: champions, duo synergies, Worlds 2026 teams and signature picks."""
 
+import json
 from dataclasses import dataclass
 from functools import lru_cache
+from pathlib import Path
 
 from app.game.state import ROLES, Role
 
@@ -382,8 +384,8 @@ def team(code: str) -> Team | None:
     return _TEAM_BY_CODE.get(code)
 
 
-# Hand-picked comfort champions, most iconic first (+5 down to +1).
-# Players missing here get a stable list generated from their role's pool.
+# Hand-picked comfort champions, most iconic first. Only used for players the career data in
+# signatures.json has nothing for.
 SIGNATURES: dict[str, list[str]] = {
     "Kiin": ["Kennen", "Jayce", "Gnar", "Camille", "Rumble"],
     "Canyon": ["Nidalee", "Graves", "Kindred", "Lee Sin", "Taliyah"],
@@ -423,3 +425,15 @@ SIGNATURES: dict[str, list[str]] = {
     "Berserker": ["Zeri", "Aphelios", "Kai'Sa", "Varus", "Xayah"],
     "Blaber": ["Lee Sin", "Elise", "Kha'Zix", "Graves", "Xin Zhao"],
 }
+
+
+def _load_career() -> dict[str, list[str]]:
+    """Most played champions per player, from scripts/fetch_signatures.py."""
+    path = Path(__file__).with_name("signatures.json")
+    if not path.exists():
+        return {}
+    players = json.loads(path.read_text(encoding="utf-8")).get("players", {})
+    return {name: [champ for champ, _ in entry["champions"]] for name, entry in players.items() if entry.get("champions")}
+
+
+CAREER_SIGNATURES = _load_career()

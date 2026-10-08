@@ -7,7 +7,15 @@ from pydantic import BaseModel
 
 from app.game import data
 from app.game.engine import PLAYIN_LABEL, STAGE_LABEL, reachable
-from app.game.power import champion_power, duo_bonus, duo_label, signatures_of, team_power, total_power
+from app.game.power import (
+    champion_power,
+    duo_bonus,
+    duo_label,
+    signature_bonus,
+    signatures_of,
+    team_power,
+    total_power,
+)
 from app.game.state import (
     ROLES,
     MapState,
@@ -155,7 +163,7 @@ def _offer_view(run: RunState, offer: Offer, base: Lineup) -> OfferView:
         player = team.players[role]
         sigs = signatures_of(player, role)
         if offer.champ in sigs:
-            signatures.append(OfferSignature(role=role, player=player, bonus=5 - sigs.index(offer.champ)))
+            signatures.append(OfferSignature(role=role, player=player, bonus=signature_bonus(player, role, offer.champ)))
 
     synergies = []
     for role in ROLES:

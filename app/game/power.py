@@ -3,7 +3,7 @@
 import math
 from functools import lru_cache
 
-from app.game.data import CHAMPIONS, SIGNATURES, archetype_of, main_role_pool, synergy_of
+from app.game.data import CAREER_SIGNATURES, CHAMPIONS, SIGNATURES, archetype_of, main_role_pool, synergy_of
 from app.game.rng import Rng, Seed, fnv1a
 from app.game.state import ROLES, ClashStep, PowerLine, PowerPart, Role, Unit
 
@@ -48,8 +48,16 @@ def champion_parts(champ: str, level: int) -> list[PowerPart]:
     return parts
 
 
+# Bonus for a player's signature champions, from the most played down.
+SIGNATURE_TIERS = (5, 4, 3, 3, 2, 2, 1, 1, 1, 1)
+
+
 @lru_cache
 def signatures_of(player: str, role: Role) -> tuple[str, ...]:
+    """A player's comfort champions, most played first: their pro career in the role, the
+    hand-picked list when there is no career data, otherwise a stable pick from the pool."""
+    if player in CAREER_SIGNATURES:
+        return tuple(CAREER_SIGNATURES[player][: len(SIGNATURE_TIERS)])
     if player in SIGNATURES:
         return tuple(SIGNATURES[player])
     rng = Rng(Seed(fnv1a(f"{player}|{role}")))
@@ -58,7 +66,7 @@ def signatures_of(player: str, role: Role) -> tuple[str, ...]:
 
 def signature_bonus(player: str, role: Role, champ: str) -> int:
     sigs = signatures_of(player, role)
-    return 5 - sigs.index(champ) if champ in sigs else 0
+    return SIGNATURE_TIERS[sigs.index(champ)] if champ in sigs else 0
 
 
 def pair_weight(a: Role, b: Role) -> int:
