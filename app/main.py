@@ -1,12 +1,22 @@
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import get_settings
-from app.routers import catalog
+from app.db import init_db
+from app.routers import catalog, runs
 
 settings = get_settings()
 
-app = FastAPI(title="Riftlike API")
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    init_db()
+    yield
+
+
+app = FastAPI(title="Riftlike API", lifespan=lifespan)
 
 app.add_middleware(
     CORSMiddleware,
@@ -17,6 +27,7 @@ app.add_middleware(
 )
 
 app.include_router(catalog.router)
+app.include_router(runs.router)
 
 
 @app.get("/api/health")
