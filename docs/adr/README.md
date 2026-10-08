@@ -8,3 +8,4 @@ Each record answers three questions. What was the situation, what did we decide,
 |---|---|---|
 | [0001](0001-two-separate-repos.md) | Two separate repos | Accepted |
 | [0002](0002-the-backend-owns-the-game-rules.md) | The backend owns the game rules | Accepted |
+| [0003](0003-seeded-randomness-stored-on-the-run.md) | Seeded randomness stored on the run | Accepted |
