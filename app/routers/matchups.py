@@ -2,7 +2,7 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 
 from app.game.data import CHAMPIONS
-from app.game.power import lane_matchups
+from app.game.power import lane_matchups, matchup_note
 from app.game.state import Role
 
 router = APIRouter(prefix="/api/matchups", tags=["matchups"])
@@ -10,7 +10,8 @@ router = APIRouter(prefix="/api/matchups", tags=["matchups"])
 
 class MatchupEntry(BaseModel):
     champ: str
-    value: int  # lane bonus, 1 or 2
+    value: int  # lane bonus, 1 to 5
+    note: str  # why the winning side of the matchup has the edge
 
 
 class Matchups(BaseModel):
@@ -32,6 +33,6 @@ def get_matchups(champ: str, role: Role | None = None) -> Matchups:
     return Matchups(
         champ=champ,
         role=lane,
-        counters=[MatchupEntry(champ=c, value=v) for c, v in counters],
-        countered_by=[MatchupEntry(champ=c, value=v) for c, v in countered_by],
+        counters=[MatchupEntry(champ=c, value=v, note=matchup_note(champ, c)) for c, v in counters],
+        countered_by=[MatchupEntry(champ=c, value=v, note=matchup_note(c, champ)) for c, v in countered_by],
     )

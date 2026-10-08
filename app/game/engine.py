@@ -13,6 +13,7 @@ from app.game.power import (
     clash,
     duo_bonus,
     matchup,
+    matchup_note,
     max_level,
     round_half_up,
     signature_bonus,
@@ -406,6 +407,7 @@ def _fight(run: RunState, node: MapNode) -> FightResult:
     return FightResult(
         role=role, champ=unit.champ, level=level_before, enemy=enemy, ours=ours, theirs=theirs,
         ours_parts=line.parts, theirs_parts=theirs_parts, matchup=m, outcome=outcome, xp=xp,  # type: ignore[arg-type]
+        matchup_note=matchup_note(unit.champ, enemy.champ) if m > 0 else matchup_note(enemy.champ, unit.champ) if m < 0 else "",
     )
 
 
@@ -444,9 +446,11 @@ def _play_match(run: RunState) -> MatchResult:
             if m > 0:
                 a.power += m
                 a.counter = m
+                a.counter_note = matchup_note(a.champ, b.champ)
             elif m < 0:
                 b.power -= m
                 b.counter = -m
+                b.counter_note = matchup_note(b.champ, a.champ)
 
     steps, win, left = clash([s.power for s in ours], [s.power for s in theirs])
     label = match_label(run)

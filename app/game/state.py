@@ -76,6 +76,7 @@ class FightResult(BaseModel):
     ours_parts: list[PowerPart]
     theirs_parts: list[PowerPart] = Field(default_factory=list)
     matchup: int  # positive favours us
+    matchup_note: str = ""  # why the side with the matchup bonus has it
     outcome: Literal["win", "loss", "draw", "forfeit"]
     xp: list[XpGain]
 
@@ -87,6 +88,7 @@ class LaneSide(BaseModel):
     player: str
     power: int  # power entering the clash, matchup included
     counter: int = 0  # matchup bonus this side received
+    counter_note: str = ""  # why this side counters its lane opponent
     parts: list[PowerPart] = Field(default_factory=list)  # how the power was built, before the matchup
 
 

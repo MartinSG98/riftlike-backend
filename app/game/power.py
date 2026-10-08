@@ -87,16 +87,63 @@ def duo_label(partner: str, archetype: str | None) -> str:
     return f"{archetype} with {partner}" if archetype else f"With {partner}"
 
 
-_MATCHUP_TABLE = (-2, -1, -1, 0, 0, 0, 1, 1, 2)
+# How one class does into another in a lane, from the first one's side. Read both ways, so
+# a fighter into a tank is +2 and a tank into a fighter is -2.
+_CLASS_EDGE = {
+    ("Fighter", "Tank"): 2,
+    ("Fighter", "Enchanter"): 1,
+    ("Assassin", "Mage"): 1,
+    ("Assassin", "Marksman"): 2,
+    ("Assassin", "Enchanter"): 1,
+    ("Mage", "Tank"): 1,
+    ("Mage", "Fighter"): 1,
+    ("Marksman", "Tank"): 1,
+    ("Tank", "Enchanter"): 1,
+    ("Tank", "Assassin"): 1,
+}
+_RANGED = {"Mage", "Marksman", "Enchanter"}
+_FOCUS_ORDER = {"early": 0, "mid": 1, "late": 2}
+_QUIRK = (-1, 0, 0, 1)
+MATCHUP_CAP = 5
+
+
+def matchup_reasons(a: str, b: str) -> list[tuple[str, int]]:
+    """Why `a` is ahead of or behind `b` in a lane, as (reason, value) pairs from `a`'s side.
+    Each piece is antisymmetric, so matchup(b, a) == -matchup(a, b)."""
+    if a == b:
+        return []
+    ca, cb = CHAMPIONS[a], CHAMPIONS[b]
+    reasons: list[tuple[str, int]] = []
+
+    tempo = _FOCUS_ORDER[cb.focus] - _FOCUS_ORDER[ca.focus]
+    if tempo:
+        reasons.append(("stronger early" if tempo > 0 else "weaker early", tempo))
+
+    edge = _CLASS_EDGE.get((ca.cls, cb.cls), 0) - _CLASS_EDGE.get((cb.cls, ca.cls), 0)
+    if edge:
+        reasons.append((f"{ca.cls.lower()} into {cb.cls.lower()}", edge))
+
+    ranged = int(ca.cls in _RANGED) - int(cb.cls in _RANGED)
+    if ranged:
+        reasons.append(("ranged into melee" if ranged > 0 else "melee into ranged", ranged))
+
+    # A small stable nudge per pair, so two champions of the same type still differ.
+    first, second = sorted((a, b))
+    quirk = _QUIRK[fnv1a(f"{first}>{second}") % len(_QUIRK)]
+    if quirk:
+        reasons.append(("matchup quirks", quirk if a == first else -quirk))
+    return reasons
 
 
 def matchup(a: str, b: str) -> int:
-    """Lane advantage of `a` over `b`. Stable and antisymmetric, so matchup(b, a) == -matchup(a, b)."""
-    if a == b:
-        return 0
-    first, second = sorted((a, b))
-    value = _MATCHUP_TABLE[fnv1a(f"{first}>{second}") % len(_MATCHUP_TABLE)]
-    return value if a == first else -value
+    """Lane advantage of `a` over `b`, between -5 and +5."""
+    total = sum(value for _, value in matchup_reasons(a, b))
+    return max(-MATCHUP_CAP, min(MATCHUP_CAP, total))
+
+
+def matchup_note(a: str, b: str) -> str:
+    """The reasons `a` counters `b`, in words, for the side that gets the bonus."""
+    return ", ".join(reason for reason, value in matchup_reasons(a, b) if value > 0)
 
 
 def lane_matchups(champ: str, role: Role) -> tuple[list[tuple[str, int]], list[tuple[str, int]]]:

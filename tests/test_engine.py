@@ -38,6 +38,18 @@ def test_matchup_is_antisymmetric():
     assert matchup("Azir", "Azir") == 0
 
 
+def test_counters_follow_tempo_and_class():
+    from app.game.power import MATCHUP_CAP, matchup_note
+
+    assert matchup("Kled", "Ornn") >= 3
+    assert "fighter into tank" in matchup_note("Kled", "Ornn")
+    assert "stronger early" in matchup_note("Kled", "Ornn")
+    assert matchup_note("Ornn", "Kled") == "" or matchup("Ornn", "Kled") < 0
+    for role in ROLES:
+        pool = main_role_pool(role)
+        assert all(abs(matchup(a, b)) <= MATCHUP_CAP for a in pool for b in pool)
+
+
 def test_synergy_is_symmetric():
     assert synergy_of("Xayah", "Rakan") == synergy_of("Rakan", "Xayah") == 2
 
