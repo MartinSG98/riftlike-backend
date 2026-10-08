@@ -247,7 +247,7 @@ def _build_opponent(run: RunState, rng: Rng, code: str, level: int) -> dict[Role
     assert team is not None
     stage_round = run.swiss.w + run.swiss.l
     sig_chance = {"playin": 0.25, "swiss": 0.3 + 0.1 * stage_round, "qf": 0.6, "sf": 0.6, "final": 0.6}[run.stage]
-    draft_chance = {"playin": 0.0, "swiss": 0.08 * stage_round, "qf": 0.5, "sf": 0.7, "final": 0.85}[run.stage]
+    draft_chance = {"playin": 0.0, "swiss": 0.08 * stage_round, "qf": 0.42, "sf": 0.6, "final": 0.75}[run.stage]
     late = run.stage in ("qf", "sf", "final")
     used = {u.champ for u in run.slots.values() if u}
     slots: dict[Role, Unit] = {}

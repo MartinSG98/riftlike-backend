@@ -156,7 +156,7 @@ python -m scripts.simulate 300
 
 The tests cover the data (every signature exists, every role has early, mid and late options), the power and clash rules, illegal actions, determinism, the API lifecycle, and a full bot run for each of the 19 teams.
 
-The simulation plays a few hundred runs per team with a greedy bot and prints how far they got. The numbers in the engine were tuned against it. With the current values a main-stage team wins the event in roughly 10 to 15 percent of bot runs, a Play-In team in about 4 percent, and over a third of the Play-In teams go out before the Swiss stage. A person who plays around synergies and roles should do better.
+The simulation plays a few hundred runs per team with a greedy bot and prints how far they got. The numbers in the engine were tuned against it. With the current values a main-stage team wins the event in roughly 9 to 17 percent of bot runs, a Play-In team in about 13 percent, and about a quarter of the Play-In teams go out before the Swiss stage. A person who plays around synergies and roles should do better.
 
 ## Structure
 
