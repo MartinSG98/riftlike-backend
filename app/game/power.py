@@ -38,6 +38,16 @@ def champion_power(champ: str, level: int) -> int:
     return base_power(level) + focus_mod(CHAMPIONS[champ].focus, level)
 
 
+def champion_parts(champ: str, level: int) -> list[PowerPart]:
+    """The breakdown of a champion on its own, with no player or team around it."""
+    parts = [PowerPart(label=f"Level {level}", value=base_power(level), kind="level")]
+    focus = CHAMPIONS[champ].focus
+    value = focus_mod(focus, level)
+    if value:
+        parts.append(PowerPart(label=f"{focus.capitalize()} game", value=value, kind="focus"))
+    return parts
+
+
 @lru_cache
 def signatures_of(player: str, role: Role) -> tuple[str, ...]:
     if player in SIGNATURES:

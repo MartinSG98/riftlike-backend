@@ -8,6 +8,7 @@ from app.game import data
 from app.game.data import CHAMPION_NAMES, CHAMPIONS, main_role_pool, synergy_of
 from app.game.power import (
     XP_PER_LEVEL,
+    champion_parts,
     champion_power,
     clash,
     matchup,
@@ -386,11 +387,12 @@ def _fight(run: RunState, node: MapNode) -> FightResult:
     role, enemy = node.role, node.enemy
     unit = run.slots[role]
     theirs_base = champion_power(enemy.champ, enemy.level)
+    theirs_parts = champion_parts(enemy.champ, enemy.level)
     if unit is None:
         xp = give_xp(run, {r: TEAM_XP["forfeit"] for r in ROLES})
         return FightResult(
             role=role, champ=None, level=None, enemy=enemy, ours=0, theirs=theirs_base,
-            ours_parts=[], matchup=0, outcome="forfeit", xp=xp,
+            ours_parts=[], theirs_parts=theirs_parts, matchup=0, outcome="forfeit", xp=xp,
         )
 
     line = team_power(run.slots, data.team(run.team).players)[role]  # type: ignore[union-attr]
@@ -404,7 +406,7 @@ def _fight(run: RunState, node: MapNode) -> FightResult:
     xp = give_xp(run, {r: lane_xp if r == role else TEAM_XP[outcome] for r in ROLES})
     return FightResult(
         role=role, champ=unit.champ, level=level_before, enemy=enemy, ours=ours, theirs=theirs,
-        ours_parts=line.parts, matchup=m, outcome=outcome, xp=xp,  # type: ignore[arg-type]
+        ours_parts=line.parts, theirs_parts=theirs_parts, matchup=m, outcome=outcome, xp=xp,  # type: ignore[arg-type]
     )
 
 
@@ -430,11 +432,13 @@ def _play_match(run: RunState) -> MatchResult:
         u = run.slots[role]
         line = our_lines[role]
         ours.append(LaneSide(role=role, champ=u.champ if u else None, level=u.level if u else None,
-                             player=team.players[role], power=line.total if line else 0))
+                             player=team.players[role], power=line.total if line else 0,
+                             parts=line.parts if line else []))
         e = run.opponent.slots[role]
         their_line = their_lines[role]
         theirs.append(LaneSide(role=role, champ=e.champ, level=e.level, player=opp.players[role],
-                               power=their_line.total if their_line else 0))
+                               power=their_line.total if their_line else 0,
+                               parts=their_line.parts if their_line else []))
     for a, b in zip(ours, theirs):
         if a.champ and b.champ:
             m = matchup(a.champ, b.champ)
