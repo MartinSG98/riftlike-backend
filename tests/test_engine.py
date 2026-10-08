@@ -1,0 +1,97 @@
+import pytest
+
+from app.game import engine
+from app.game.data import CHAMPIONS, SIGNATURES, TEAMS, main_role_pool, synergy_of
+from app.game.power import champion_power, clash, focus_mod, matchup, signatures_of
+from app.game.state import ROLES, Continue, Enter, PendingFirst, Swap
+from scripts.simulate import play
+
+
+def test_every_named_champion_exists():
+    for player, champs in SIGNATURES.items():
+        for champ in champs:
+            assert champ in CHAMPIONS, f"{player}: {champ}"
+
+
+def test_every_role_has_early_mid_and_late_options():
+    for role in ROLES:
+        focuses = {CHAMPIONS[c].focus for c in main_role_pool(role)}
+        assert focuses == {"early", "mid", "late"}, role
+
+
+def test_generated_signatures_are_stable_and_in_role():
+    first = signatures_of("SomeRookie", "JGL")
+    assert first == signatures_of("SomeRookie", "JGL")
+    assert len(first) == 5
+    assert all(c in main_role_pool("JGL") for c in first)
+
+
+def test_focus_curve_shapes():
+    assert focus_mod("early", 1) > focus_mod("early", 18)
+    assert focus_mod("late", 1) < focus_mod("late", 18)
+    assert champion_power("Azir", 16) > champion_power("Akshan", 16)
+
+
+def test_matchup_is_antisymmetric():
+    for a, b in [("Azir", "Kassadin"), ("Jinx", "Draven"), ("Lee Sin", "Viego")]:
+        assert matchup(a, b) == -matchup(b, a)
+    assert matchup("Azir", "Azir") == 0
+
+
+def test_synergy_is_symmetric():
+    assert synergy_of("Xayah", "Rakan") == synergy_of("Rakan", "Xayah") == 2
+
+
+@pytest.mark.parametrize(
+    "ours, theirs",
+    [([30, 28, 26, 31, 24], [27, 33, 25, 29, 22]), ([0, 0, 40, 40, 40], [30, 30, 30, 30, 30]), ([20] * 5, [20] * 5)],
+)
+def test_clash_is_decided_by_total_power(ours, theirs):
+    _, win, _ = clash(ours, theirs)
+    assert win == (sum(ours) > sum(theirs))
+
+
+def test_new_run_starts_with_a_first_pick():
+    run = engine.new_run("GEN", 7)
+    assert isinstance(run.pending, PendingFirst)
+    assert run.stage == "swiss"
+    assert {o.level for o in run.pending.offers} == {4}
+
+
+def test_play_in_team_starts_in_the_play_in():
+    run = engine.new_run("FUR", 7)
+    assert run.stage == "playin"
+    assert len(run.playin.order) == 3 and "FUR" not in run.playin.order
+
+
+def test_unreachable_nodes_are_rejected():
+    run = engine.new_run("T1", 3)
+    engine.apply(run, engine.ChooseFirst(type="choose_first", champ=run.pending.offers[0].champ))
+    deep = next(n.id for n in run.map.nodes if n.row == 3)
+    with pytest.raises(engine.IllegalAction):
+        engine.apply(run, Enter(type="enter", node=deep))
+    with pytest.raises(engine.IllegalAction):
+        engine.apply(run, Continue(type="continue"))
+
+
+def test_swap_moves_champions_between_roles():
+    run = engine.new_run("T1", 3)
+    role = run.pending.role
+    engine.apply(run, engine.ChooseFirst(type="choose_first", champ=run.pending.offers[0].champ))
+    other = next(r for r in ROLES if r != role)
+    engine.apply(run, Swap(type="swap", a=role, b=other))
+    assert run.slots[role] is None and run.slots[other] is not None
+
+
+def test_same_seed_plays_the_same_run():
+    a = play(42, "GEN")
+    b = play(42, "GEN")
+    assert a.model_dump() == b.model_dump()
+
+
+@pytest.mark.parametrize("team", [t.code for t in TEAMS])
+def test_bot_runs_finish_for_every_team(team):
+    for seed in range(5):
+        run = play(seed, team)
+        assert run.result in ("champion", "eliminated")
+        assert run.history

@@ -10,3 +10,4 @@ Each record answers three questions. What was the situation, what did we decide,
 | [0002](0002-the-backend-owns-the-game-rules.md) | The backend owns the game rules | Accepted |
 | [0003](0003-seeded-randomness-stored-on-the-run.md) | Seeded randomness stored on the run | Accepted |
 | [0004](0004-a-run-is-one-json-document.md) | A run is one JSON document | Accepted |
+| [0005](0005-balance-tuned-with-a-bot-simulation.md) | Balance tuned with a bot simulation | Accepted |
