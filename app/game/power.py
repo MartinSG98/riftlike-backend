@@ -72,6 +72,16 @@ def matchup(a: str, b: str) -> int:
     return value if a == first else -value
 
 
+def lane_matchups(champ: str, role: Role) -> tuple[list[tuple[str, int]], list[tuple[str, int]]]:
+    """Champions that can play `role` which `champ` counters, and those that counter it.
+    Both lists hold (champion, bonus) pairs, strongest first."""
+    rivals = [c for c, info in CHAMPIONS.items() if c != champ and role in info.roles]
+    values = [(c, matchup(champ, c)) for c in rivals]
+    counters = sorted(((c, v) for c, v in values if v > 0), key=lambda cv: (-cv[1], cv[0]))
+    countered_by = sorted(((c, -v) for c, v in values if v < 0), key=lambda cv: (-cv[1], cv[0]))
+    return counters, countered_by
+
+
 def team_power(slots: dict[Role, Unit | None], players: dict[Role, str]) -> dict[Role, PowerLine | None]:
     filled = [r for r in ROLES if slots.get(r)]
     damage = {CHAMPIONS[slots[r].champ].dmg for r in filled}  # type: ignore[union-attr]

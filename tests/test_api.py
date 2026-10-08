@@ -44,6 +44,25 @@ def test_run_lifecycle(client):
     assert bad.status_code == 409
 
 
+def test_matchups_list_both_directions(client):
+    from app.game.power import matchup
+
+    body = client.get("/api/matchups/Azir", params={"role": "MID"}).json()
+    assert body["role"] == "MID"
+    assert body["counters"] and body["countered_by"]
+    for entry in body["counters"]:
+        assert matchup("Azir", entry["champ"]) == entry["value"] > 0
+    for entry in body["countered_by"]:
+        assert matchup(entry["champ"], "Azir") == entry["value"] > 0
+    values = [e["value"] for e in body["counters"]]
+    assert values == sorted(values, reverse=True)
+
+
+def test_matchups_default_to_the_main_role_and_reject_unknown_names(client):
+    assert client.get("/api/matchups/Nunu%20%26%20Willump").json()["role"] == "JGL"
+    assert client.get("/api/matchups/Nobody").status_code == 404
+
+
 def test_unknown_team_and_run(client):
     assert client.post("/api/runs", json={"team": "NOPE"}).status_code == 400
     assert client.get("/api/runs/missing").status_code == 404

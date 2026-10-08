@@ -46,6 +46,7 @@ Copy `.env.example` to `.env` if you need to change anything.
 |---|---|---|
 | GET | `/api/health` | Liveness check |
 | GET | `/api/catalog` | Champions, teams with rosters, and leagues |
+| GET | `/api/matchups/{champ}` | Who this champion counters in lane and who counters it, `?role=` to pick the lane |
 | POST | `/api/runs` | Start a run for `{"team": "GEN"}` |
 | GET | `/api/runs` | Recent runs, newest first, `?limit=` up to 50 |
 | GET | `/api/runs/{id}` | One run as the client renders it |
@@ -80,7 +81,7 @@ The run view carries the pending step (`first`, `pick`, `fight`, `match` or `sta
 
 **Bonuses.** A champion outside its own roles loses 6. Each player has five signature champions worth +5 down to +1 when that player plays one in their own role. Duo synergies add their value to both champions, triple for the bot lane pair, double for jungle and mid, single anywhere else, and a few known bad pairs subtract. A full team that is all AD or all AP loses 3 on every champion. Mixed damage champions break that streak.
 
-**Matches.** Before the clash, each lane gets a matchup bonus of up to 2 for the champion that counters its opponent. Then lanes clash from top to bottom. The stronger side wins and carries what it has left into the next enemy, and whoever has power left at the end wins. Every clash takes the same amount off both sides, so the team with the higher total always wins and the order only tells the story. A dead even match goes to the opponent, and an empty role is worth nothing.
+**Matches.** Before the clash, each lane gets a matchup bonus of up to 2 for the champion that counters its opponent. `GET /api/matchups/{champ}` lists, for one lane, every champion it counters and every champion that counters it, strongest first. Then lanes clash from top to bottom. The stronger side wins and carries what it has left into the next enemy, and whoever has power left at the end wins. Every clash takes the same amount off both sides, so the team with the higher total always wins and the order only tells the story. A dead even match goes to the opponent, and an empty role is worth nothing.
 
 **XP.** A level costs 1000 XP. Champions trailing the team's best earn 25 percent more for every level they are behind beyond the first, up to double, so new picks catch up.
 
