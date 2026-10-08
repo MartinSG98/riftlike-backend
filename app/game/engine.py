@@ -53,8 +53,8 @@ from app.game.state import (
 ROW_WIDTHS = (2, 3, 4, 3, 4, 3)
 LAST_ROW = len(ROW_WIDTHS) - 1
 
-LANE_XP = {"win": 800, "draw": 500, "loss": 250, "forfeit": 0}
-TEAM_XP = {"win": 200, "draw": 140, "loss": 80, "forfeit": 60}
+# A lane fight only teaches the champion who fought it. The rest of the team levels from matches.
+LANE_XP = {"win": 1100, "draw": 700, "loss": 350, "forfeit": 0}
 MATCH_XP = {True: 700, False: 450}
 PLAYIN_XP_SCALE = 0.35  # the Play-In is a warm-up, it should not leave its qualifier far ahead
 SKIPPED_DAY_XP = 2000  # about two levels for every Swiss day skipped
@@ -389,10 +389,9 @@ def _fight(run: RunState, node: MapNode) -> FightResult:
     theirs_base = champion_power(enemy.champ, enemy.level)
     theirs_parts = champion_parts(enemy.champ, enemy.level)
     if unit is None:
-        xp = give_xp(run, {r: TEAM_XP["forfeit"] for r in ROLES})
         return FightResult(
             role=role, champ=None, level=None, enemy=enemy, ours=0, theirs=theirs_base,
-            ours_parts=[], theirs_parts=theirs_parts, matchup=0, outcome="forfeit", xp=xp,
+            ours_parts=[], theirs_parts=theirs_parts, matchup=0, outcome="forfeit", xp=[],
         )
 
     line = team_power(run.slots, data.team(run.team).players)[role]  # type: ignore[union-attr]
@@ -403,7 +402,7 @@ def _fight(run: RunState, node: MapNode) -> FightResult:
     outcome = "win" if ours > theirs else "loss" if ours < theirs else "draw"
     lane_xp = LANE_XP[outcome] + (100 * max(0, enemy.level - unit.level) if outcome == "win" else 0)
     level_before = unit.level
-    xp = give_xp(run, {r: lane_xp if r == role else TEAM_XP[outcome] for r in ROLES})
+    xp = give_xp(run, {role: lane_xp})
     return FightResult(
         role=role, champ=unit.champ, level=level_before, enemy=enemy, ours=ours, theirs=theirs,
         ours_parts=line.parts, theirs_parts=theirs_parts, matchup=m, outcome=outcome, xp=xp,  # type: ignore[arg-type]

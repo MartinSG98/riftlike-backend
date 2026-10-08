@@ -83,6 +83,25 @@ def test_swap_moves_champions_between_roles():
     assert run.slots[role] is None and run.slots[other] is not None
 
 
+def test_lane_fights_only_level_the_champion_in_that_lane():
+    from app.game.state import PendingFight
+    from scripts.simulate import bot_step
+
+    checked = 0
+    for seed in range(20):
+        run = engine.new_run("T1", seed)
+        for _ in range(300):
+            if run.result:
+                break
+            if isinstance(run.pending, PendingFight):
+                r = run.pending.result
+                assert all(g.role == r.role for g in r.xp)
+                assert len(r.xp) == (0 if r.outcome == "forfeit" else 1)
+                checked += 1
+            bot_step(run)
+    assert checked > 20
+
+
 def test_results_carry_the_power_breakdown_behind_every_number():
     from app.game.state import PendingFight, PendingMatch
     from scripts.simulate import bot_step

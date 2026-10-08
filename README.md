@@ -10,7 +10,7 @@ Architecture decisions are recorded in [docs/adr](docs/adr/README.md), one numbe
 
 1. Pick a team. Main-stage teams start in the Swiss stage, Play-In teams start one step earlier in a four-team bracket.
 2. Choose the first champion for one of your players from an early, a mid and a late game option.
-3. Every match day is a map. Walk it from top to bottom. Lane fights give your champions XP, pick nodes add a champion to any role.
+3. Every match day is a map. Walk it from top to bottom. Lane fights give XP to the champion in that lane, pick nodes add a champion to any role.
 4. The match against a real Worlds 2026 roster waits at the bottom of the map.
 5. Three Swiss wins reach the Quarterfinals, three losses end the run. From the Quarterfinals on one loss ends it.
 6. The Semifinal and the Final have no map. Every champion jumps to level 17 (Final 18) and the team gets three picks in a row.
@@ -83,14 +83,14 @@ The run view carries the pending step (`first`, `pick`, `fight`, `match` or `sta
 
 **Matches.** Before the clash, each lane gets a matchup bonus of up to 2 for the champion that counters its opponent. `GET /api/matchups/{champ}` lists, for one lane, every champion it counters and every champion that counters it, strongest first. Then lanes clash from top to bottom. The stronger side wins and carries what it has left into the next enemy, and whoever has power left at the end wins. Every clash takes the same amount off both sides, so the team with the higher total always wins and the order only tells the story. A dead even match goes to the opponent, and an empty role is worth nothing.
 
-**XP.** A level costs 1000 XP. Champions trailing the team's best earn 25 percent more for every level they are behind beyond the first, up to double, so new picks catch up.
+**XP.** A level costs 1000 XP. A lane fight only levels the champion who fought it, the rest of the team levels from matches. Champions trailing the team's best earn 25 percent more for every level they are behind beyond the first, up to double, so new picks catch up.
 
 | Event | Champion in that lane | Rest of the team |
 |---|---|---|
-| Lane fight won | 800, plus 100 per level the enemy was ahead | 200 |
-| Lane fight drawn | 500 | 140 |
-| Lane fight lost | 250 | 80 |
-| Lane fight forfeited (nobody in that role) | 0 | 60 |
+| Lane fight won | 1100, plus 100 per level the enemy was ahead | 0 |
+| Lane fight drawn | 700 | 0 |
+| Lane fight lost | 350 | 0 |
+| Lane fight forfeited (nobody in that role) | 0 | 0 |
 | Match won | 700 | 700 |
 | Match lost | 450 | 450 |
 | Swiss day skipped by finishing 3-0 or 3-1 | 2000 per day | 2000 per day |
