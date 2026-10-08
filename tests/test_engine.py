@@ -83,6 +83,29 @@ def test_swap_moves_champions_between_roles():
     assert run.slots[role] is None and run.slots[other] is not None
 
 
+def test_results_carry_the_power_breakdown_behind_every_number():
+    from app.game.state import PendingFight, PendingMatch
+    from scripts.simulate import bot_step
+
+    run = engine.new_run("GEN", 11)
+    seen_fight = seen_match = False
+    for _ in range(400):
+        if run.result or (seen_fight and seen_match):
+            break
+        if isinstance(run.pending, PendingFight) and run.pending.result.outcome != "forfeit":
+            r = run.pending.result
+            assert sum(p.value for p in r.ours_parts) + max(0, r.matchup) == r.ours
+            assert sum(p.value for p in r.theirs_parts) + max(0, -r.matchup) == r.theirs
+            seen_fight = True
+        if isinstance(run.pending, PendingMatch):
+            for lane in run.pending.result.ours + run.pending.result.theirs:
+                if lane.champ:
+                    assert sum(p.value for p in lane.parts) + lane.counter == lane.power
+            seen_match = True
+        bot_step(run)
+    assert seen_fight and seen_match
+
+
 def test_same_seed_plays_the_same_run():
     a = play(42, "GEN")
     b = play(42, "GEN")

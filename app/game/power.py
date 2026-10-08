@@ -38,6 +38,16 @@ def champion_power(champ: str, level: int) -> int:
     return base_power(level) + focus_mod(CHAMPIONS[champ].focus, level)
 
 
+def champion_parts(champ: str, level: int) -> list[PowerPart]:
+    """The breakdown of a champion on its own, with no player or team around it."""
+    parts = [PowerPart(label=f"Level {level}", value=base_power(level), kind="level")]
+    focus = CHAMPIONS[champ].focus
+    value = focus_mod(focus, level)
+    if value:
+        parts.append(PowerPart(label=f"{focus.capitalize()} game", value=value, kind="focus"))
+    return parts
+
+
 @lru_cache
 def signatures_of(player: str, role: Role) -> tuple[str, ...]:
     if player in SIGNATURES:
@@ -70,6 +80,16 @@ def matchup(a: str, b: str) -> int:
     first, second = sorted((a, b))
     value = _MATCHUP_TABLE[fnv1a(f"{first}>{second}") % len(_MATCHUP_TABLE)]
     return value if a == first else -value
+
+
+def lane_matchups(champ: str, role: Role) -> tuple[list[tuple[str, int]], list[tuple[str, int]]]:
+    """Champions that can play `role` which `champ` counters, and those that counter it.
+    Both lists hold (champion, bonus) pairs, strongest first."""
+    rivals = [c for c, info in CHAMPIONS.items() if c != champ and role in info.roles]
+    values = [(c, matchup(champ, c)) for c in rivals]
+    counters = sorted(((c, v) for c, v in values if v > 0), key=lambda cv: (-cv[1], cv[0]))
+    countered_by = sorted(((c, -v) for c, v in values if v < 0), key=lambda cv: (-cv[1], cv[0]))
+    return counters, countered_by
 
 
 def team_power(slots: dict[Role, Unit | None], players: dict[Role, str]) -> dict[Role, PowerLine | None]:
