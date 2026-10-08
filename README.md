@@ -106,8 +106,8 @@ A hand-picked duo always takes precedence over an archetype. About 56 percent of
 | Lane fight drawn | 700 | 0 |
 | Lane fight lost | 350 | 0 |
 | Lane fight forfeited (nobody in that role) | 0 | 0 |
-| Match won | 700 | 700 |
-| Match lost | 450 | 450 |
+| Match won | 950 | 950 |
+| Match lost | 650 | 650 |
 | Swiss day skipped by finishing 3-0 or 3-1 | 2000 per day | 2000 per day |
 
 Play-In XP is scaled down to 35 percent so its winner does not arrive in the Swiss stage far ahead of everyone else.
@@ -156,7 +156,7 @@ python -m scripts.simulate 300
 
 The tests cover the data (every signature exists, every role has early, mid and late options), the power and clash rules, illegal actions, determinism, the API lifecycle, and a full bot run for each of the 19 teams.
 
-The simulation plays a few hundred runs per team with a greedy bot and prints how far they got. The numbers in the engine were tuned against it. With the current values a main-stage team wins the event in roughly 8 to 16 percent of bot runs, and about half of the Play-In teams go out before the Swiss stage. A person who plays around synergies and roles should do better.
+The simulation plays a few hundred runs per team with a greedy bot and prints how far they got. The numbers in the engine were tuned against it. With the current values a main-stage team wins the event in roughly 10 to 15 percent of bot runs, a Play-In team in about 4 percent, and over a third of the Play-In teams go out before the Swiss stage. A person who plays around synergies and roles should do better.
 
 ## Structure
 

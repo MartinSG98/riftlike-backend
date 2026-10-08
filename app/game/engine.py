@@ -55,7 +55,7 @@ LAST_ROW = len(ROW_WIDTHS) - 1
 
 # A lane fight only teaches the champion who fought it. The rest of the team levels from matches.
 LANE_XP = {"win": 1100, "draw": 700, "loss": 350, "forfeit": 0}
-MATCH_XP = {True: 700, False: 450}
+MATCH_XP = {True: 950, False: 650}
 PLAYIN_XP_SCALE = 0.35  # the Play-In is a warm-up, it should not leave its qualifier far ahead
 SKIPPED_DAY_XP = 2000  # about two levels for every Swiss day skipped
 
