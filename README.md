@@ -73,13 +73,28 @@ curl -X POST -H "Content-Type: application/json" -d '{"type":"enter","node":"0-1
 curl -X POST -H "Content-Type: application/json" -d '{"type":"continue"}' http://127.0.0.1:8010/api/runs/<id>/actions
 ```
 
-The run view carries the pending step (`first`, `pick`, `fight`, `match` or `stage`), the lineup with every champion's power and its breakdown, the map with the reachable node ids, the next opponent with their lineup, and for each offered champion the power it would have in every role and how the team total would change.
+The run view carries the pending step (`first`, `pick`, `fight`, `match` or `stage`), the lineup with every champion's power, its breakdown and the active synergies, the map with the reachable node ids, the next opponent with their lineup, and for each offered champion the power it would have in every role and how the team total would change.
 
 ## The rules in numbers
 
 **Power.** Every champion is one number. It is 20 at level 1 and grows by 2 per level, up to level 18, or 20 for whoever plays top. On top of that comes the champion's focus. Early game champions start 6 ahead and slide to 6 behind by level 18, late game champions start 4 behind and finish 11 ahead, and mid game champions peak around the middle with up to 2.
 
-**Bonuses.** A champion outside its own roles loses 6. Each player has five signature champions worth +5 down to +1 when that player plays one in their own role. Duo synergies add their value to both champions, triple for the bot lane pair, double for jungle and mid, single anywhere else, and a few known bad pairs subtract. A full team that is all AD or all AP loses 3 on every champion. Mixed damage champions break that streak.
+**Bonuses.** A champion outside its own roles loses 6. Each player has five signature champions worth +5 down to +1 when that player plays one in their own role. A full team that is all AD or all AP loses 3 on every champion. Mixed damage champions break that streak.
+
+**Synergy.** Two champions can give each other power, and both of them get it. The value is multiplied by the pair of slots: triple for the bot lane, double for jungle and mid, single anywhere else. There are two kinds. A list of hand-picked duos, such as Xayah and Rakan or Kalista and Renata Glasc, gives +1 or +2, and a few known bad pairs subtract. On top of that, archetypes fire by type for a pair of slots, at +1 before the weighting:
+
+| Archetype | Slots | First | Second |
+|---|---|---|---|
+| Lane bullies | Bot, Support | early marksman | early tank |
+| All-in lane | Bot, Support | early marksman | mid game tank |
+| Protect the carry | Bot, Support | late marksman | enchanter |
+| Poke lane | Bot, Support | mid game marksman | mage |
+| Early skirmish | Jungle, Mid | any early champion | assassin |
+| Engage and follow-up | Jungle, Mid | tank | mage |
+| Side lane pressure | Top, Jungle | any early champion | any early champion |
+| Frontline for the carry | Top, Bot | tank | late marksman |
+
+A hand-picked duo always takes precedence over an archetype. About 56 percent of random lineups end up with at least one synergy.
 
 **Matches.** Before the clash, each lane gets a matchup bonus of up to 2 for the champion that counters its opponent. `GET /api/matchups/{champ}` lists, for one lane, every champion it counters and every champion that counters it, strongest first. Then lanes clash from top to bottom. The stronger side wins and carries what it has left into the next enemy, and whoever has power left at the end wins. Every clash takes the same amount off both sides, so the team with the higher total always wins and the order only tells the story. A dead even match goes to the opponent, and an empty role is worth nothing.
 

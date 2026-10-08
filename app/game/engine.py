@@ -5,15 +5,15 @@ IllegalAction. Results are computed when a step starts and stored on `pending`, 
 reload shows the same outcome instead of rolling again."""
 
 from app.game import data
-from app.game.data import CHAMPION_NAMES, CHAMPIONS, main_role_pool, synergy_of
+from app.game.data import CHAMPION_NAMES, CHAMPIONS, main_role_pool
 from app.game.power import (
     XP_PER_LEVEL,
     champion_parts,
     champion_power,
     clash,
+    duo_bonus,
     matchup,
     max_level,
-    pair_weight,
     round_half_up,
     signature_bonus,
     signatures_of,
@@ -258,7 +258,7 @@ def _build_opponent(run: RunState, rng: Rng, code: str, level: int) -> dict[Role
             meta = rng.shuffle([c for c in main_role_pool(role) if c not in used and c not in sigs])[:4]
 
             def score(c: str) -> int:
-                duo = sum(synergy_of(c, u.champ) * pair_weight(role, r) for r, u in slots.items())
+                duo = sum(duo_bonus(c, role, u.champ, r)[0] for r, u in slots.items())
                 return champion_power(c, lvl) + signature_bonus(player, role, c) + duo + rng.int(3)
 
             champ = max(sigs + meta, key=score)

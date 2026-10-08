@@ -6,9 +6,8 @@ from datetime import datetime
 from pydantic import BaseModel
 
 from app.game import data
-from app.game.data import synergy_of
 from app.game.engine import PLAYIN_LABEL, STAGE_LABEL, reachable
-from app.game.power import champion_power, pair_weight, signatures_of, team_power, total_power
+from app.game.power import champion_power, duo_bonus, duo_label, signatures_of, team_power, total_power
 from app.game.state import (
     ROLES,
     MapState,
@@ -26,11 +25,19 @@ from app.game.state import (
 )
 
 
+class SynergyLink(BaseModel):
+    roles: tuple[Role, Role]
+    champs: tuple[str, str]
+    archetype: str | None  # None for a hand-picked duo
+    value: int  # what each of the two champions gets, already weighted
+
+
 class Lineup(BaseModel):
     slots: dict[Role, Unit | None]
     power: dict[Role, PowerLine | None]
     total: int
     warnings: list[str]
+    synergies: list[SynergyLink]
 
 
 class OpponentView(BaseModel):
@@ -55,6 +62,7 @@ class OfferSynergy(BaseModel):
     champ: str
     role: Role
     value: int  # already weighted for the role pair, assuming the best role
+    label: str
 
 
 class OfferView(BaseModel):
@@ -104,7 +112,15 @@ def lineup(slots: dict[Role, Unit | None], players: dict[Role, str]) -> Lineup:
     comp = next((p for line in power.values() if line for p in line.parts if p.kind == "comp"), None)
     if comp:
         warnings.append(f"{comp.label}: {comp.value} on every champion")
-    return Lineup(slots=slots, power=power, total=total_power(power), warnings=warnings)
+    links: list[SynergyLink] = []
+    for i, a in enumerate(ROLES):
+        for b in ROLES[i + 1 :]:
+            ua, ub = slots.get(a), slots.get(b)
+            if ua and ub:
+                value, archetype = duo_bonus(ua.champ, a, ub.champ, b)
+                if value:
+                    links.append(SynergyLink(roles=(a, b), champs=(ua.champ, ub.champ), archetype=archetype, value=value))
+    return Lineup(slots=slots, power=power, total=total_power(power), warnings=warnings, synergies=links)
 
 
 def day_label(run: RunState) -> str:
@@ -146,9 +162,11 @@ def _offer_view(run: RunState, offer: Offer, base: Lineup) -> OfferView:
         unit = run.slots[role]
         if not unit or role == best:
             continue
-        value = synergy_of(offer.champ, unit.champ)
+        value, archetype = duo_bonus(offer.champ, best, unit.champ, role)
         if value:
-            synergies.append(OfferSynergy(champ=unit.champ, role=role, value=value * pair_weight(best, role)))
+            synergies.append(
+                OfferSynergy(champ=unit.champ, role=role, value=value, label=duo_label(unit.champ, archetype))
+            )
 
     return OfferView(
         champ=offer.champ,

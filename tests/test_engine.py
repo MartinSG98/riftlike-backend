@@ -42,6 +42,38 @@ def test_synergy_is_symmetric():
     assert synergy_of("Xayah", "Rakan") == synergy_of("Rakan", "Xayah") == 2
 
 
+def test_archetypes_only_fire_in_their_own_slots():
+    from app.game.power import duo_bonus
+
+    assert duo_bonus("Kalista", "BOT", "Leona", "SUP") == (3, "Lane bullies")
+    assert duo_bonus("Leona", "SUP", "Kalista", "BOT") == (3, "Lane bullies")
+    assert duo_bonus("Leona", "BOT", "Kalista", "SUP") == (0, None)
+    assert duo_bonus("Sejuani", "JGL", "Orianna", "MID") == (2, None)  # hand-picked, not the archetype
+
+
+def test_hand_picked_duos_take_precedence_over_archetypes():
+    from app.game.power import duo_bonus
+
+    # Kalista and Rell would also be lane bullies, the named duo decides
+    assert duo_bonus("Kalista", "BOT", "Rell", "SUP") == (3, None)
+    assert duo_bonus("Ezreal", "BOT", "Leona", "SUP") == (-3, None)
+
+
+def test_most_lineups_have_a_synergy():
+    import random
+
+    from app.game.power import duo_bonus
+
+    rng = random.Random(3)
+    pools = {r: main_role_pool(r) for r in ROLES}
+    hits = 0
+    for _ in range(3000):
+        team = {r: rng.choice(pools[r]) for r in ROLES}
+        pairs = [(a, b) for i, a in enumerate(ROLES) for b in ROLES[i + 1 :]]
+        hits += any(duo_bonus(team[a], a, team[b], b)[0] for a, b in pairs)
+    assert hits / 3000 > 0.45
+
+
 @pytest.mark.parametrize(
     "ours, theirs",
     [([30, 28, 26, 31, 24], [27, 33, 25, 29, 22]), ([0, 0, 40, 40, 40], [30, 30, 30, 30, 30]), ([20] * 5, [20] * 5)],
