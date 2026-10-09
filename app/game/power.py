@@ -3,7 +3,7 @@
 import math
 from functools import lru_cache
 
-from app.game.data import CHAMPIONS, SIGNATURES, main_role_pool, synergy_of
+from app.game.data import CHAMPIONS, SIGNATURES, archetype_of, main_role_pool, synergy_of
 from app.game.rng import Rng, Seed, fnv1a
 from app.game.state import ROLES, ClashStep, PowerLine, PowerPart, Role, Unit
 
@@ -70,6 +70,23 @@ def pair_weight(a: Role, b: Role) -> int:
     return 1
 
 
+def duo_bonus(a: str, role_a: Role, b: str, role_b: Role) -> tuple[int, str | None]:
+    """The synergy `a` gets from `b` in these two slots, already weighted for the pair, and
+    the archetype's name when the bonus comes from one. A hand-picked duo takes precedence."""
+    weight = pair_weight(role_a, role_b)
+    named = synergy_of(a, b)
+    if named:
+        return named * weight, None
+    archetype = archetype_of(a, role_a, b, role_b)
+    if archetype:
+        return archetype.value * weight, archetype.name
+    return 0, None
+
+
+def duo_label(partner: str, archetype: str | None) -> str:
+    return f"{archetype} with {partner}" if archetype else f"With {partner}"
+
+
 _MATCHUP_TABLE = (-2, -1, -1, 0, 0, 0, 1, 1, 2)
 
 
@@ -117,11 +134,9 @@ def team_power(slots: dict[Role, Unit | None], players: dict[Role, str]) -> dict
             if other == role:
                 continue
             partner = slots[other].champ  # type: ignore[union-attr]
-            value = synergy_of(unit.champ, partner)
+            value, archetype = duo_bonus(unit.champ, role, partner, other)
             if value:
-                parts.append(
-                    PowerPart(label=f"With {partner}", value=value * pair_weight(role, other), kind="synergy")
-                )
+                parts.append(PowerPart(label=duo_label(partner, archetype), value=value, kind="synergy"))
         if mono:
             parts.append(PowerPart(label=f"Full {mono} team", value=-MONO_DAMAGE_PENALTY, kind="comp"))
 

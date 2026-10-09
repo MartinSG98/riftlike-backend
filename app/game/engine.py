@@ -5,15 +5,15 @@ IllegalAction. Results are computed when a step starts and stored on `pending`, 
 reload shows the same outcome instead of rolling again."""
 
 from app.game import data
-from app.game.data import CHAMPION_NAMES, CHAMPIONS, main_role_pool, synergy_of
+from app.game.data import CHAMPION_NAMES, CHAMPIONS, main_role_pool
 from app.game.power import (
     XP_PER_LEVEL,
     champion_parts,
     champion_power,
     clash,
+    duo_bonus,
     matchup,
     max_level,
-    pair_weight,
     round_half_up,
     signature_bonus,
     signatures_of,
@@ -53,9 +53,9 @@ from app.game.state import (
 ROW_WIDTHS = (2, 3, 4, 3, 4, 3)
 LAST_ROW = len(ROW_WIDTHS) - 1
 
-LANE_XP = {"win": 800, "draw": 500, "loss": 250, "forfeit": 0}
-TEAM_XP = {"win": 200, "draw": 140, "loss": 80, "forfeit": 60}
-MATCH_XP = {True: 700, False: 450}
+# A lane fight only teaches the champion who fought it. The rest of the team levels from matches.
+LANE_XP = {"win": 1100, "draw": 700, "loss": 350, "forfeit": 0}
+MATCH_XP = {True: 950, False: 650}
 PLAYIN_XP_SCALE = 0.35  # the Play-In is a warm-up, it should not leave its qualifier far ahead
 SKIPPED_DAY_XP = 2000  # about two levels for every Swiss day skipped
 
@@ -258,7 +258,7 @@ def _build_opponent(run: RunState, rng: Rng, code: str, level: int) -> dict[Role
             meta = rng.shuffle([c for c in main_role_pool(role) if c not in used and c not in sigs])[:4]
 
             def score(c: str) -> int:
-                duo = sum(synergy_of(c, u.champ) * pair_weight(role, r) for r, u in slots.items())
+                duo = sum(duo_bonus(c, role, u.champ, r)[0] for r, u in slots.items())
                 return champion_power(c, lvl) + signature_bonus(player, role, c) + duo + rng.int(3)
 
             champ = max(sigs + meta, key=score)
@@ -389,10 +389,9 @@ def _fight(run: RunState, node: MapNode) -> FightResult:
     theirs_base = champion_power(enemy.champ, enemy.level)
     theirs_parts = champion_parts(enemy.champ, enemy.level)
     if unit is None:
-        xp = give_xp(run, {r: TEAM_XP["forfeit"] for r in ROLES})
         return FightResult(
             role=role, champ=None, level=None, enemy=enemy, ours=0, theirs=theirs_base,
-            ours_parts=[], theirs_parts=theirs_parts, matchup=0, outcome="forfeit", xp=xp,
+            ours_parts=[], theirs_parts=theirs_parts, matchup=0, outcome="forfeit", xp=[],
         )
 
     line = team_power(run.slots, data.team(run.team).players)[role]  # type: ignore[union-attr]
@@ -403,7 +402,7 @@ def _fight(run: RunState, node: MapNode) -> FightResult:
     outcome = "win" if ours > theirs else "loss" if ours < theirs else "draw"
     lane_xp = LANE_XP[outcome] + (100 * max(0, enemy.level - unit.level) if outcome == "win" else 0)
     level_before = unit.level
-    xp = give_xp(run, {r: lane_xp if r == role else TEAM_XP[outcome] for r in ROLES})
+    xp = give_xp(run, {role: lane_xp})
     return FightResult(
         role=role, champ=unit.champ, level=level_before, enemy=enemy, ours=ours, theirs=theirs,
         ours_parts=line.parts, theirs_parts=theirs_parts, matchup=m, outcome=outcome, xp=xp,  # type: ignore[arg-type]

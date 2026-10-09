@@ -268,6 +268,53 @@ def synergy_of(a: str, b: str) -> int:
     return _SYNERGY_MAP.get((a, b), 0)
 
 
+# (classes, focuses) a champion must fit, None meaning any.
+Fit = tuple[tuple[str, ...] | None, tuple[str, ...] | None]
+
+
+@dataclass(frozen=True)
+class Archetype:
+    """A duo that works by type rather than by name, for one pair of slots."""
+
+    name: str
+    roles: tuple[Role, Role]
+    first: Fit
+    second: Fit
+    value: int = 1
+
+    def matches(self, a: Champion, role_a: Role, b: Champion, role_b: Role) -> bool:
+        if (role_a, role_b) == self.roles:
+            return _fits(a, self.first) and _fits(b, self.second)
+        if (role_b, role_a) == self.roles:
+            return _fits(b, self.first) and _fits(a, self.second)
+        return False
+
+
+def _fits(champ: Champion, fit: Fit) -> bool:
+    classes, focuses = fit
+    return (classes is None or champ.cls in classes) and (focuses is None or champ.focus in focuses)
+
+
+# Checked only for pairs without a hand-picked value above, so a named duo always wins.
+ARCHETYPES = [
+    Archetype("Lane bullies", ("BOT", "SUP"), (("Marksman",), ("early",)), (("Tank",), ("early",))),
+    Archetype("All-in lane", ("BOT", "SUP"), (("Marksman",), ("early",)), (("Tank",), ("mid",))),
+    Archetype("Protect the carry", ("BOT", "SUP"), (("Marksman",), ("late",)), (("Enchanter",), None)),
+    Archetype("Poke lane", ("BOT", "SUP"), (("Marksman",), ("mid",)), (("Mage",), None)),
+    Archetype("Early skirmish", ("JGL", "MID"), (None, ("early",)), (("Assassin",), None)),
+    Archetype("Engage and follow-up", ("JGL", "MID"), (("Tank",), None), (("Mage",), None)),
+    Archetype("Side lane pressure", ("TOP", "JGL"), (None, ("early",)), (None, ("early",))),
+    Archetype("Frontline for the carry", ("TOP", "BOT"), (("Tank",), None), (("Marksman",), ("late",))),
+]
+
+
+def archetype_of(a: str, role_a: Role, b: str, role_b: Role) -> Archetype | None:
+    for archetype in ARCHETYPES:
+        if archetype.matches(CHAMPIONS[a], role_a, CHAMPIONS[b], role_b):
+            return archetype
+    return None
+
+
 @dataclass(frozen=True)
 class League:
     code: str

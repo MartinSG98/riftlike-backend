@@ -11,3 +11,4 @@ Each record answers three questions. What was the situation, what did we decide,
 | [0003](0003-seeded-randomness-stored-on-the-run.md) | Seeded randomness stored on the run | Accepted |
 | [0004](0004-a-run-is-one-json-document.md) | A run is one JSON document | Accepted |
 | [0005](0005-balance-tuned-with-a-bot-simulation.md) | Balance tuned with a bot simulation | Accepted |
+| [0006](0006-synergies-by-archetype.md) | Synergies by archetype | Accepted |
