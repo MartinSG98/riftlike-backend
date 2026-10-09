@@ -12,3 +12,4 @@ Each record answers three questions. What was the situation, what did we decide,
 | [0004](0004-a-run-is-one-json-document.md) | A run is one JSON document | Accepted |
 | [0005](0005-balance-tuned-with-a-bot-simulation.md) | Balance tuned with a bot simulation | Accepted |
 | [0006](0006-synergies-by-archetype.md) | Synergies by archetype | Accepted |
+| [0007](0007-signature-champions-from-career-data.md) | Signature champions from career data | Accepted |

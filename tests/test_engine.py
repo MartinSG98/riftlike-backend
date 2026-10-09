@@ -19,6 +19,20 @@ def test_every_role_has_early_mid_and_late_options():
         assert focuses == {"early", "mid", "late"}, role
 
 
+def test_career_signatures_drive_the_bonuses():
+    from app.game.data import CAREER_SIGNATURES
+    from app.game.power import SIGNATURE_TIERS, signature_bonus
+
+    assert len(CAREER_SIGNATURES) == sum(len(t.players) for t in TEAMS)
+    for team in TEAMS:
+        for role, player in team.players.items():
+            sigs = signatures_of(player, role)
+            assert sigs == tuple(CAREER_SIGNATURES[player][: len(SIGNATURE_TIERS)])
+            assert all(c in CHAMPIONS for c in sigs)
+            assert [signature_bonus(player, role, c) for c in sigs] == list(SIGNATURE_TIERS[: len(sigs)])
+    assert "Kled" in signatures_of("BrokenBlade", "TOP")
+
+
 def test_generated_signatures_are_stable_and_in_role():
     first = signatures_of("SomeRookie", "JGL")
     assert first == signatures_of("SomeRookie", "JGL")
@@ -36,6 +50,18 @@ def test_matchup_is_antisymmetric():
     for a, b in [("Azir", "Kassadin"), ("Jinx", "Draven"), ("Lee Sin", "Viego")]:
         assert matchup(a, b) == -matchup(b, a)
     assert matchup("Azir", "Azir") == 0
+
+
+def test_counters_follow_tempo_and_class():
+    from app.game.power import MATCHUP_CAP, matchup_note
+
+    assert matchup("Kled", "Ornn") >= 3
+    assert "fighter into tank" in matchup_note("Kled", "Ornn")
+    assert "stronger early" in matchup_note("Kled", "Ornn")
+    assert matchup_note("Ornn", "Kled") == "" or matchup("Ornn", "Kled") < 0
+    for role in ROLES:
+        pool = main_role_pool(role)
+        assert all(abs(matchup(a, b)) <= MATCHUP_CAP for a in pool for b in pool)
 
 
 def test_synergy_is_symmetric():

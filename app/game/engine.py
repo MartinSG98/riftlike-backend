@@ -7,12 +7,14 @@ reload shows the same outcome instead of rolling again."""
 from app.game import data
 from app.game.data import CHAMPION_NAMES, CHAMPIONS, main_role_pool
 from app.game.power import (
+    SIGNATURE_TIERS,
     XP_PER_LEVEL,
     champion_parts,
     champion_power,
     clash,
     duo_bonus,
     matchup,
+    matchup_note,
     max_level,
     round_half_up,
     signature_bonus,
@@ -245,7 +247,7 @@ def _build_opponent(run: RunState, rng: Rng, code: str, level: int) -> dict[Role
     assert team is not None
     stage_round = run.swiss.w + run.swiss.l
     sig_chance = {"playin": 0.25, "swiss": 0.3 + 0.1 * stage_round, "qf": 0.6, "sf": 0.6, "final": 0.6}[run.stage]
-    draft_chance = {"playin": 0.0, "swiss": 0.08 * stage_round, "qf": 0.5, "sf": 0.7, "final": 0.85}[run.stage]
+    draft_chance = {"playin": 0.0, "swiss": 0.08 * stage_round, "qf": 0.42, "sf": 0.6, "final": 0.75}[run.stage]
     late = run.stage in ("qf", "sf", "final")
     used = {u.champ for u in run.slots.values() if u}
     slots: dict[Role, Unit] = {}
@@ -265,7 +267,7 @@ def _build_opponent(run: RunState, rng: Rng, code: str, level: int) -> dict[Role
         elif rng.chance(sig_chance):
             sigs = [c for c in signatures_of(player, role) if c not in used]
             # earlier entries are more iconic, so they show up more often
-            bag = [c for i, c in enumerate(sigs) for _ in range(5 - i)]
+            bag = [c for i, c in enumerate(sigs) for _ in range(SIGNATURE_TIERS[i])]
             champ = rng.pick(bag)
         if champ is None:
             pool = [c for c in main_role_pool(role) if c not in used]
@@ -406,6 +408,7 @@ def _fight(run: RunState, node: MapNode) -> FightResult:
     return FightResult(
         role=role, champ=unit.champ, level=level_before, enemy=enemy, ours=ours, theirs=theirs,
         ours_parts=line.parts, theirs_parts=theirs_parts, matchup=m, outcome=outcome, xp=xp,  # type: ignore[arg-type]
+        matchup_note=matchup_note(unit.champ, enemy.champ) if m > 0 else matchup_note(enemy.champ, unit.champ) if m < 0 else "",
     )
 
 
@@ -444,9 +447,11 @@ def _play_match(run: RunState) -> MatchResult:
             if m > 0:
                 a.power += m
                 a.counter = m
+                a.counter_note = matchup_note(a.champ, b.champ)
             elif m < 0:
                 b.power -= m
                 b.counter = -m
+                b.counter_note = matchup_note(b.champ, a.champ)
 
     steps, win, left = clash([s.power for s in ours], [s.power for s in theirs])
     label = match_label(run)

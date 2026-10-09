@@ -1,0 +1,4376 @@
+{
+ "source": "gol.gg career champion pools",
+ "fetched": "2026-10-09",
+ "players": {
+  "Kiin": {
+   "gol_id": "1115",
+   "role": "TOP",
+   "champions": [
+    [
+     "Renekton",
+     88
+    ],
+    [
+     "K'Sante",
+     79
+    ],
+    [
+     "Gnar",
+     71
+    ],
+    [
+     "Jayce",
+     65
+    ],
+    [
+     "Aatrox",
+     58
+    ],
+    [
+     "Gwen",
+     57
+    ],
+    [
+     "Gangplank",
+     50
+    ],
+    [
+     "Camille",
+     45
+    ],
+    [
+     "Jax",
+     45
+    ],
+    [
+     "Rumble",
+     45
+    ]
+   ]
+  },
+  "Canyon": {
+   "gol_id": "1909",
+   "role": "JGL",
+   "champions": [
+    [
+     "Lee Sin",
+     116
+    ],
+    [
+     "Xin Zhao",
+     64
+    ],
+    [
+     "Sejuani",
+     61
+    ],
+    [
+     "Nidalee",
+     60
+    ],
+    [
+     "Vi",
+     52
+    ],
+    [
+     "Jarvan IV",
+     50
+    ],
+    [
+     "Wukong",
+     49
+    ],
+    [
+     "Skarner",
+     43
+    ],
+    [
+     "Maokai",
+     37
+    ],
+    [
+     "Graves",
+     36
+    ]
+   ]
+  },
+  "Chovy": {
+   "gol_id": "1629",
+   "role": "MID",
+   "champions": [
+    [
+     "Azir",
+     108
+    ],
+    [
+     "Corki",
+     65
+    ],
+    [
+     "Galio",
+     65
+    ],
+    [
+     "Sylas",
+     64
+    ],
+    [
+     "Ahri",
+     60
+    ],
+    [
+     "Ryze",
+     58
+    ],
+    [
+     "Orianna",
+     45
+    ],
+    [
+     "Zoe",
+     44
+    ],
+    [
+     "LeBlanc",
+     40
+    ],
+    [
+     "Yone",
+     38
+    ]
+   ]
+  },
+  "Ruler": {
+   "gol_id": "685",
+   "role": "BOT",
+   "champions": [
+    [
+     "Ezreal",
+     173
+    ],
+    [
+     "Varus",
+     117
+    ],
+    [
+     "Xayah",
+     105
+    ],
+    [
+     "Ashe",
+     105
+    ],
+    [
+     "Jhin",
+     94
+    ],
+    [
+     "Kalista",
+     76
+    ],
+    [
+     "Kai'Sa",
+     74
+    ],
+    [
+     "Aphelios",
+     65
+    ],
+    [
+     "Lucian",
+     59
+    ],
+    [
+     "Zeri",
+     53
+    ]
+   ]
+  },
+  "Duro": {
+   "gol_id": "4259",
+   "role": "SUP",
+   "champions": [
+    [
+     "Rakan",
+     69
+    ],
+    [
+     "Nautilus",
+     58
+    ],
+    [
+     "Alistar",
+     47
+    ],
+    [
+     "Rell",
+     41
+    ],
+    [
+     "Braum",
+     31
+    ],
+    [
+     "Leona",
+     28
+    ],
+    [
+     "Lulu",
+     27
+    ],
+    [
+     "Neeko",
+     23
+    ],
+    [
+     "Renata Glasc",
+     22
+    ],
+    [
+     "Bard",
+     22
+    ]
+   ]
+  },
+  "Zeus": {
+   "gol_id": "3658",
+   "role": "TOP",
+   "champions": [
+    [
+     "Gnar",
+     93
+    ],
+    [
+     "Jayce",
+     73
+    ],
+    [
+     "K'Sante",
+     60
+    ],
+    [
+     "Aatrox",
+     54
+    ],
+    [
+     "Rumble",
+     51
+    ],
+    [
+     "Gwen",
+     42
+    ],
+    [
+     "Jax",
+     39
+    ],
+    [
+     "Camille",
+     33
+    ],
+    [
+     "Ambessa",
+     32
+    ],
+    [
+     "Gragas",
+     30
+    ]
+   ]
+  },
+  "Kanavi": {
+   "gol_id": "2360",
+   "role": "JGL",
+   "champions": [
+    [
+     "Lee Sin",
+     101
+    ],
+    [
+     "Vi",
+     76
+    ],
+    [
+     "Xin Zhao",
+     69
+    ],
+    [
+     "Wukong",
+     61
+    ],
+    [
+     "Viego",
+     48
+    ],
+    [
+     "Jarvan IV",
+     48
+    ],
+    [
+     "Nidalee",
+     39
+    ],
+    [
+     "Graves",
+     37
+    ],
+    [
+     "Pantheon",
+     34
+    ],
+    [
+     "Sejuani",
+     34
+    ]
+   ]
+  },
+  "Zeka": {
+   "gol_id": "2906",
+   "role": "MID",
+   "champions": [
+    [
+     "Azir",
+     108
+    ],
+    [
+     "Ahri",
+     68
+    ],
+    [
+     "Yone",
+     64
+    ],
+    [
+     "Sylas",
+     61
+    ],
+    [
+     "Akali",
+     52
+    ],
+    [
+     "Taliyah",
+     44
+    ],
+    [
+     "Orianna",
+     36
+    ],
+    [
+     "Ryze",
+     35
+    ],
+    [
+     "Corki",
+     34
+    ],
+    [
+     "LeBlanc",
+     31
+    ]
+   ]
+  },
+  "Gumayusi": {
+   "gol_id": "3247",
+   "role": "BOT",
+   "champions": [
+    [
+     "Xayah",
+     73
+    ],
+    [
+     "Varus",
+     70
+    ],
+    [
+     "Jhin",
+     67
+    ],
+    [
+     "Aphelios",
+     65
+    ],
+    [
+     "Lucian",
+     63
+    ],
+    [
+     "Kalista",
+     47
+    ],
+    [
+     "Caitlyn",
+     46
+    ],
+    [
+     "Ashe",
+     44
+    ],
+    [
+     "Jinx",
+     44
+    ],
+    [
+     "Senna",
+     42
+    ]
+   ]
+  },
+  "Delight": {
+   "gol_id": "3411",
+   "role": "SUP",
+   "champions": [
+    [
+     "Rakan",
+     118
+    ],
+    [
+     "Alistar",
+     85
+    ],
+    [
+     "Rell",
+     77
+    ],
+    [
+     "Leona",
+     65
+    ],
+    [
+     "Nautilus",
+     46
+    ],
+    [
+     "Lulu",
+     34
+    ],
+    [
+     "Braum",
+     28
+    ],
+    [
+     "Bard",
+     27
+    ],
+    [
+     "Karma",
+     27
+    ],
+    [
+     "Milio",
+     24
+    ]
+   ]
+  },
+  "Doran": {
+   "gol_id": "1242",
+   "role": "TOP",
+   "champions": [
+    [
+     "Gnar",
+     82
+    ],
+    [
+     "Jayce",
+     73
+    ],
+    [
+     "Renekton",
+     69
+    ],
+    [
+     "K'Sante",
+     59
+    ],
+    [
+     "Aatrox",
+     58
+    ],
+    [
+     "Jax",
+     56
+    ],
+    [
+     "Rumble",
+     54
+    ],
+    [
+     "Gwen",
+     47
+    ],
+    [
+     "Ornn",
+     43
+    ],
+    [
+     "Ambessa",
+     37
+    ]
+   ]
+  },
+  "Oner": {
+   "gol_id": "3741",
+   "role": "JGL",
+   "champions": [
+    [
+     "Xin Zhao",
+     100
+    ],
+    [
+     "Lee Sin",
+     89
+    ],
+    [
+     "Vi",
+     83
+    ],
+    [
+     "Sejuani",
+     71
+    ],
+    [
+     "Viego",
+     66
+    ],
+    [
+     "Wukong",
+     57
+    ],
+    [
+     "Nocturne",
+     55
+    ],
+    [
+     "Jarvan IV",
+     53
+    ],
+    [
+     "Poppy",
+     37
+    ],
+    [
+     "Pantheon",
+     34
+    ]
+   ]
+  },
+  "Faker": {
+   "gol_id": "48",
+   "role": "MID",
+   "champions": [
+    [
+     "Azir",
+     213
+    ],
+    [
+     "Orianna",
+     111
+    ],
+    [
+     "Ryze",
+     110
+    ],
+    [
+     "Corki",
+     83
+    ],
+    [
+     "Galio",
+     82
+    ],
+    [
+     "Ahri",
+     75
+    ],
+    [
+     "Viktor",
+     74
+    ],
+    [
+     "Taliyah",
+     73
+    ],
+    [
+     "LeBlanc",
+     58
+    ],
+    [
+     "Akali",
+     50
+    ]
+   ]
+  },
+  "Peyz": {
+   "gol_id": "4247",
+   "role": "BOT",
+   "champions": [
+    [
+     "Aphelios",
+     78
+    ],
+    [
+     "Zeri",
+     58
+    ],
+    [
+     "Lucian",
+     50
+    ],
+    [
+     "Ezreal",
+     49
+    ],
+    [
+     "Varus",
+     43
+    ],
+    [
+     "Kalista",
+     43
+    ],
+    [
+     "Kai'Sa",
+     40
+    ],
+    [
+     "Xayah",
+     37
+    ],
+    [
+     "Jhin",
+     36
+    ],
+    [
+     "Jinx",
+     27
+    ]
+   ]
+  },
+  "Keria": {
+   "gol_id": "1258",
+   "role": "SUP",
+   "champions": [
+    [
+     "Rakan",
+     72
+    ],
+    [
+     "Nautilus",
+     70
+    ],
+    [
+     "Alistar",
+     61
+    ],
+    [
+     "Leona",
+     60
+    ],
+    [
+     "Braum",
+     60
+    ],
+    [
+     "Renata Glasc",
+     58
+    ],
+    [
+     "Tahm Kench",
+     58
+    ],
+    [
+     "Thresh",
+     57
+    ],
+    [
+     "Lulu",
+     51
+    ],
+    [
+     "Bard",
+     48
+    ]
+   ]
+  },
+  "Siwoo": {
+   "gol_id": "5392",
+   "role": "TOP",
+   "champions": [
+    [
+     "K'Sante",
+     58
+    ],
+    [
+     "Gnar",
+     36
+    ],
+    [
+     "Ambessa",
+     36
+    ],
+    [
+     "Jax",
+     36
+    ],
+    [
+     "Jayce",
+     35
+    ],
+    [
+     "Rumble",
+     33
+    ],
+    [
+     "Renekton",
+     29
+    ],
+    [
+     "Aatrox",
+     23
+    ],
+    [
+     "Sion",
+     20
+    ],
+    [
+     "Gwen",
+     20
+    ]
+   ]
+  },
+  "Lucid": {
+   "gol_id": "3895",
+   "role": "JGL",
+   "champions": [
+    [
+     "Lee Sin",
+     89
+    ],
+    [
+     "Vi",
+     70
+    ],
+    [
+     "Wukong",
+     66
+    ],
+    [
+     "Sejuani",
+     56
+    ],
+    [
+     "Jarvan IV",
+     54
+    ],
+    [
+     "Xin Zhao",
+     47
+    ],
+    [
+     "Viego",
+     42
+    ],
+    [
+     "Maokai",
+     42
+    ],
+    [
+     "Skarner",
+     22
+    ],
+    [
+     "Pantheon",
+     17
+    ]
+   ]
+  },
+  "ShowMaker": {
+   "gol_id": "1250",
+   "role": "MID",
+   "champions": [
+    [
+     "LeBlanc",
+     83
+    ],
+    [
+     "Syndra",
+     72
+    ],
+    [
+     "Azir",
+     68
+    ],
+    [
+     "Ryze",
+     67
+    ],
+    [
+     "Zoe",
+     59
+    ],
+    [
+     "Ahri",
+     55
+    ],
+    [
+     "Taliyah",
+     54
+    ],
+    [
+     "Twisted Fate",
+     48
+    ],
+    [
+     "Viktor",
+     47
+    ],
+    [
+     "Sylas",
+     44
+    ]
+   ]
+  },
+  "Smash": {
+   "gol_id": "4940",
+   "role": "BOT",
+   "champions": [
+    [
+     "Lucian",
+     39
+    ],
+    [
+     "Ezreal",
+     34
+    ],
+    [
+     "Kai'Sa",
+     34
+    ],
+    [
+     "Jhin",
+     32
+    ],
+    [
+     "Caitlyn",
+     31
+    ],
+    [
+     "Varus",
+     31
+    ],
+    [
+     "Xayah",
+     29
+    ],
+    [
+     "Kalista",
+     27
+    ],
+    [
+     "Miss Fortune",
+     24
+    ],
+    [
+     "Aphelios",
+     24
+    ]
+   ]
+  },
+  "Career": {
+   "gol_id": "5204",
+   "role": "SUP",
+   "champions": [
+    [
+     "Rakan",
+     42
+    ],
+    [
+     "Bard",
+     30
+    ],
+    [
+     "Lulu",
+     30
+    ],
+    [
+     "Rell",
+     22
+    ],
+    [
+     "Alistar",
+     21
+    ],
+    [
+     "Karma",
+     20
+    ],
+    [
+     "Leona",
+     19
+    ],
+    [
+     "Nautilus",
+     18
+    ],
+    [
+     "Milio",
+     15
+    ],
+    [
+     "Seraphine",
+     14
+    ]
+   ]
+  },
+  "Breathe": {
+   "gol_id": "2348",
+   "role": "TOP",
+   "champions": [
+    [
+     "Renekton",
+     69
+    ],
+    [
+     "K'Sante",
+     68
+    ],
+    [
+     "Gnar",
+     62
+    ],
+    [
+     "Gwen",
+     51
+    ],
+    [
+     "Jax",
+     42
+    ],
+    [
+     "Sion",
+     42
+    ],
+    [
+     "Jayce",
+     41
+    ],
+    [
+     "Ambessa",
+     38
+    ],
+    [
+     "Aatrox",
+     38
+    ],
+    [
+     "Rumble",
+     33
+    ]
+   ]
+  },
+  "Tarzan": {
+   "gol_id": "1226",
+   "role": "JGL",
+   "champions": [
+    [
+     "Sejuani",
+     90
+    ],
+    [
+     "Lee Sin",
+     73
+    ],
+    [
+     "Xin Zhao",
+     69
+    ],
+    [
+     "Wukong",
+     58
+    ],
+    [
+     "Jarvan IV",
+     56
+    ],
+    [
+     "Maokai",
+     49
+    ],
+    [
+     "Pantheon",
+     42
+    ],
+    [
+     "Poppy",
+     35
+    ],
+    [
+     "Vi",
+     32
+    ],
+    [
+     "Naafiri",
+     32
+    ]
+   ]
+  },
+  "Shanks": {
+   "gol_id": "3344",
+   "role": "MID",
+   "champions": [
+    [
+     "Azir",
+     82
+    ],
+    [
+     "Ryze",
+     76
+    ],
+    [
+     "Orianna",
+     55
+    ],
+    [
+     "Annie",
+     44
+    ],
+    [
+     "Sylas",
+     36
+    ],
+    [
+     "Galio",
+     34
+    ],
+    [
+     "Taliyah",
+     28
+    ],
+    [
+     "Yone",
+     27
+    ],
+    [
+     "Cassiopeia",
+     27
+    ],
+    [
+     "LeBlanc",
+     26
+    ]
+   ]
+  },
+  "Hope": {
+   "gol_id": "1561",
+   "role": "BOT",
+   "champions": [
+    [
+     "Varus",
+     82
+    ],
+    [
+     "Lucian",
+     61
+    ],
+    [
+     "Kai'Sa",
+     58
+    ],
+    [
+     "Aphelios",
+     58
+    ],
+    [
+     "Ezreal",
+     56
+    ],
+    [
+     "Miss Fortune",
+     54
+    ],
+    [
+     "Jinx",
+     48
+    ],
+    [
+     "Kalista",
+     43
+    ],
+    [
+     "Corki",
+     41
+    ],
+    [
+     "Jhin",
+     40
+    ]
+   ]
+  },
+  "Kael": {
+   "gol_id": "3323",
+   "role": "SUP",
+   "champions": [
+    [
+     "Leona",
+     73
+    ],
+    [
+     "Rell",
+     59
+    ],
+    [
+     "Nautilus",
+     57
+    ],
+    [
+     "Tahm Kench",
+     38
+    ],
+    [
+     "Lulu",
+     36
+    ],
+    [
+     "Renata Glasc",
+     35
+    ],
+    [
+     "Neeko",
+     35
+    ],
+    [
+     "Rakan",
+     35
+    ],
+    [
+     "Braum",
+     32
+    ],
+    [
+     "Bard",
+     31
+    ]
+   ]
+  },
+  "Bin": {
+   "gol_id": "2606",
+   "role": "TOP",
+   "champions": [
+    [
+     "Renekton",
+     109
+    ],
+    [
+     "Gnar",
+     105
+    ],
+    [
+     "Jax",
+     98
+    ],
+    [
+     "Gwen",
+     70
+    ],
+    [
+     "K'Sante",
+     63
+    ],
+    [
+     "Rumble",
+     60
+    ],
+    [
+     "Jayce",
+     48
+    ],
+    [
+     "Camille",
+     44
+    ],
+    [
+     "Sion",
+     41
+    ],
+    [
+     "Aatrox",
+     34
+    ]
+   ]
+  },
+  "XUN": {
+   "gol_id": "3330",
+   "role": "JGL",
+   "champions": [
+    [
+     "Vi",
+     96
+    ],
+    [
+     "Xin Zhao",
+     83
+    ],
+    [
+     "Wukong",
+     77
+    ],
+    [
+     "Pantheon",
+     46
+    ],
+    [
+     "Jarvan IV",
+     44
+    ],
+    [
+     "Lee Sin",
+     44
+    ],
+    [
+     "Kindred",
+     43
+    ],
+    [
+     "Nidalee",
+     41
+    ],
+    [
+     "Sejuani",
+     38
+    ],
+    [
+     "Naafiri",
+     34
+    ]
+   ]
+  },
+  "Knight": {
+   "gol_id": "1270",
+   "role": "MID",
+   "champions": [
+    [
+     "Ahri",
+     85
+    ],
+    [
+     "Orianna",
+     75
+    ],
+    [
+     "Syndra",
+     69
+    ],
+    [
+     "Ryze",
+     59
+    ],
+    [
+     "Taliyah",
+     56
+    ],
+    [
+     "Sylas",
+     56
+    ],
+    [
+     "Corki",
+     52
+    ],
+    [
+     "Zoe",
+     51
+    ],
+    [
+     "Akali",
+     48
+    ],
+    [
+     "LeBlanc",
+     47
+    ]
+   ]
+  },
+  "Viper": {
+   "gol_id": "1228",
+   "role": "BOT",
+   "champions": [
+    [
+     "Ezreal",
+     124
+    ],
+    [
+     "Kai'Sa",
+     112
+    ],
+    [
+     "Varus",
+     78
+    ],
+    [
+     "Aphelios",
+     77
+    ],
+    [
+     "Xayah",
+     74
+    ],
+    [
+     "Zeri",
+     67
+    ],
+    [
+     "Lucian",
+     62
+    ],
+    [
+     "Ashe",
+     54
+    ],
+    [
+     "Kalista",
+     53
+    ],
+    [
+     "Jhin",
+     46
+    ]
+   ]
+  },
+  "ON": {
+   "gol_id": "3353",
+   "role": "SUP",
+   "champions": [
+    [
+     "Rakan",
+     109
+    ],
+    [
+     "Nautilus",
+     79
+    ],
+    [
+     "Alistar",
+     77
+    ],
+    [
+     "Rell",
+     70
+    ],
+    [
+     "Renata Glasc",
+     49
+    ],
+    [
+     "Leona",
+     44
+    ],
+    [
+     "Lulu",
+     43
+    ],
+    [
+     "Bard",
+     36
+    ],
+    [
+     "Neeko",
+     31
+    ],
+    [
+     "Nami",
+     31
+    ]
+   ]
+  },
+  "ZUIAN": {
+   "gol_id": "5770",
+   "role": "TOP",
+   "champions": [
+    [
+     "Rumble",
+     15
+    ],
+    [
+     "Jayce",
+     15
+    ],
+    [
+     "K'Sante",
+     14
+    ],
+    [
+     "Ambessa",
+     11
+    ],
+    [
+     "Renekton",
+     10
+    ],
+    [
+     "Gnar",
+     7
+    ],
+    [
+     "Sion",
+     6
+    ],
+    [
+     "Skarner",
+     4
+    ],
+    [
+     "Vayne",
+     3
+    ],
+    [
+     "Rek'Sai",
+     2
+    ]
+   ]
+  },
+  "Tian": {
+   "gol_id": "1269",
+   "role": "JGL",
+   "champions": [
+    [
+     "Lee Sin",
+     105
+    ],
+    [
+     "Xin Zhao",
+     80
+    ],
+    [
+     "Viego",
+     62
+    ],
+    [
+     "Sejuani",
+     55
+    ],
+    [
+     "Vi",
+     55
+    ],
+    [
+     "Wukong",
+     49
+    ],
+    [
+     "Jarvan IV",
+     46
+    ],
+    [
+     "Maokai",
+     34
+    ],
+    [
+     "Pantheon",
+     27
+    ],
+    [
+     "Poppy",
+     26
+    ]
+   ]
+  },
+  "Creme": {
+   "gol_id": "3906",
+   "role": "MID",
+   "champions": [
+    [
+     "Ahri",
+     73
+    ],
+    [
+     "Akali",
+     63
+    ],
+    [
+     "Azir",
+     61
+    ],
+    [
+     "Sylas",
+     50
+    ],
+    [
+     "Ryze",
+     47
+    ],
+    [
+     "Yone",
+     46
+    ],
+    [
+     "Viktor",
+     44
+    ],
+    [
+     "Corki",
+     42
+    ],
+    [
+     "Orianna",
+     38
+    ],
+    [
+     "Tristana",
+     35
+    ]
+   ]
+  },
+  "JackeyLove": {
+   "gol_id": "1267",
+   "role": "BOT",
+   "champions": [
+    [
+     "Varus",
+     117
+    ],
+    [
+     "Ezreal",
+     116
+    ],
+    [
+     "Lucian",
+     87
+    ],
+    [
+     "Kai'Sa",
+     86
+    ],
+    [
+     "Xayah",
+     81
+    ],
+    [
+     "Aphelios",
+     67
+    ],
+    [
+     "Ashe",
+     58
+    ],
+    [
+     "Kalista",
+     48
+    ],
+    [
+     "Jhin",
+     47
+    ],
+    [
+     "Sivir",
+     44
+    ]
+   ]
+  },
+  "Zhuo": {
+   "gol_id": "3352",
+   "role": "SUP",
+   "champions": [
+    [
+     "Nautilus",
+     64
+    ],
+    [
+     "Leona",
+     50
+    ],
+    [
+     "Rakan",
+     48
+    ],
+    [
+     "Rell",
+     40
+    ],
+    [
+     "Braum",
+     39
+    ],
+    [
+     "Alistar",
+     36
+    ],
+    [
+     "Lulu",
+     30
+    ],
+    [
+     "Thresh",
+     28
+    ],
+    [
+     "Milio",
+     23
+    ],
+    [
+     "Nami",
+     19
+    ]
+   ]
+  },
+  "TheShy": {
+   "gol_id": "1075",
+   "role": "TOP",
+   "champions": [
+    [
+     "Gnar",
+     66
+    ],
+    [
+     "Jayce",
+     63
+    ],
+    [
+     "Rumble",
+     47
+    ],
+    [
+     "Kennen",
+     47
+    ],
+    [
+     "Aatrox",
+     45
+    ],
+    [
+     "Renekton",
+     42
+    ],
+    [
+     "K'Sante",
+     40
+    ],
+    [
+     "Sion",
+     38
+    ],
+    [
+     "Ornn",
+     35
+    ],
+    [
+     "Gwen",
+     33
+    ]
+   ]
+  },
+  "Wei": {
+   "gol_id": "388",
+   "role": "JGL",
+   "champions": [
+    [
+     "Xin Zhao",
+     67
+    ],
+    [
+     "Wukong",
+     64
+    ],
+    [
+     "Vi",
+     63
+    ],
+    [
+     "Lee Sin",
+     61
+    ],
+    [
+     "Viego",
+     57
+    ],
+    [
+     "Jarvan IV",
+     46
+    ],
+    [
+     "Graves",
+     33
+    ],
+    [
+     "Sejuani",
+     31
+    ],
+    [
+     "Nocturne",
+     27
+    ],
+    [
+     "Udyr",
+     26
+    ]
+   ]
+  },
+  "RooKie": {
+   "gol_id": "109",
+   "role": "MID",
+   "champions": [
+    [
+     "Orianna",
+     129
+    ],
+    [
+     "Azir",
+     104
+    ],
+    [
+     "Syndra",
+     94
+    ],
+    [
+     "Ryze",
+     73
+    ],
+    [
+     "Taliyah",
+     72
+    ],
+    [
+     "LeBlanc",
+     72
+    ],
+    [
+     "Viktor",
+     63
+    ],
+    [
+     "Ahri",
+     60
+    ],
+    [
+     "Jayce",
+     51
+    ],
+    [
+     "Corki",
+     44
+    ]
+   ]
+  },
+  "JiaQi": {
+   "gol_id": "5939",
+   "role": "BOT",
+   "champions": [
+    [
+     "Jhin",
+     21
+    ],
+    [
+     "Corki",
+     20
+    ],
+    [
+     "Yunara",
+     19
+    ],
+    [
+     "Ezreal",
+     16
+    ],
+    [
+     "Ashe",
+     16
+    ],
+    [
+     "Varus",
+     13
+    ],
+    [
+     "Kai'Sa",
+     12
+    ],
+    [
+     "Aphelios",
+     12
+    ],
+    [
+     "Miss Fortune",
+     10
+    ],
+    [
+     "Lucian",
+     9
+    ]
+   ]
+  },
+  "meiko": {
+   "gol_id": "386",
+   "role": "SUP",
+   "champions": [
+    [
+     "Alistar",
+     153
+    ],
+    [
+     "Braum",
+     132
+    ],
+    [
+     "Nautilus",
+     118
+    ],
+    [
+     "Leona",
+     108
+    ],
+    [
+     "Thresh",
+     98
+    ],
+    [
+     "Rakan",
+     92
+    ],
+    [
+     "Tahm Kench",
+     77
+    ],
+    [
+     "Lulu",
+     70
+    ],
+    [
+     "Nami",
+     58
+    ],
+    [
+     "Rell",
+     46
+    ]
+   ]
+  },
+  "BrokenBlade": {
+   "gol_id": "1310",
+   "role": "TOP",
+   "champions": [
+    [
+     "K'Sante",
+     66
+    ],
+    [
+     "Jax",
+     44
+    ],
+    [
+     "Ornn",
+     42
+    ],
+    [
+     "Aatrox",
+     41
+    ],
+    [
+     "Renekton",
+     39
+    ],
+    [
+     "Sion",
+     34
+    ],
+    [
+     "Gnar",
+     34
+    ],
+    [
+     "Jayce",
+     27
+    ],
+    [
+     "Kled",
+     26
+    ],
+    [
+     "Kennen",
+     25
+    ]
+   ]
+  },
+  "SkewMond": {
+   "gol_id": "4946",
+   "role": "JGL",
+   "champions": [
+    [
+     "Xin Zhao",
+     43
+    ],
+    [
+     "Vi",
+     41
+    ],
+    [
+     "Jarvan IV",
+     36
+    ],
+    [
+     "Maokai",
+     32
+    ],
+    [
+     "Wukong",
+     26
+    ],
+    [
+     "Pantheon",
+     24
+    ],
+    [
+     "Volibear",
+     19
+    ],
+    [
+     "Viego",
+     15
+    ],
+    [
+     "Skarner",
+     14
+    ],
+    [
+     "Sejuani",
+     13
+    ]
+   ]
+  },
+  "Caps": {
+   "gol_id": "802",
+   "role": "MID",
+   "champions": [
+    [
+     "Orianna",
+     66
+    ],
+    [
+     "LeBlanc",
+     64
+    ],
+    [
+     "Syndra",
+     58
+    ],
+    [
+     "Azir",
+     56
+    ],
+    [
+     "Ryze",
+     53
+    ],
+    [
+     "Ahri",
+     46
+    ],
+    [
+     "Taliyah",
+     44
+    ],
+    [
+     "Corki",
+     43
+    ],
+    [
+     "Sylas",
+     40
+    ],
+    [
+     "Tristana",
+     35
+    ]
+   ]
+  },
+  "Hans Sama": {
+   "gol_id": "732",
+   "role": "BOT",
+   "champions": [
+    [
+     "Varus",
+     96
+    ],
+    [
+     "Ashe",
+     67
+    ],
+    [
+     "Kalista",
+     66
+    ],
+    [
+     "Xayah",
+     61
+    ],
+    [
+     "Kai'Sa",
+     61
+    ],
+    [
+     "Ezreal",
+     54
+    ],
+    [
+     "Jinx",
+     46
+    ],
+    [
+     "Lucian",
+     46
+    ],
+    [
+     "Draven",
+     45
+    ],
+    [
+     "Aphelios",
+     43
+    ]
+   ]
+  },
+  "Labrov": {
+   "gol_id": "2887",
+   "role": "SUP",
+   "champions": [
+    [
+     "Rakan",
+     71
+    ],
+    [
+     "Alistar",
+     68
+    ],
+    [
+     "Nautilus",
+     64
+    ],
+    [
+     "Rell",
+     42
+    ],
+    [
+     "Braum",
+     39
+    ],
+    [
+     "Lulu",
+     36
+    ],
+    [
+     "Thresh",
+     33
+    ],
+    [
+     "Leona",
+     33
+    ],
+    [
+     "Tahm Kench",
+     30
+    ],
+    [
+     "Bard",
+     21
+    ]
+   ]
+  },
+  "Myrwn": {
+   "gol_id": "4310",
+   "role": "TOP",
+   "champions": [
+    [
+     "K'Sante",
+     45
+    ],
+    [
+     "Gwen",
+     35
+    ],
+    [
+     "Rumble",
+     34
+    ],
+    [
+     "Ambessa",
+     32
+    ],
+    [
+     "Jayce",
+     20
+    ],
+    [
+     "Gnar",
+     20
+    ],
+    [
+     "Sion",
+     16
+    ],
+    [
+     "Ornn",
+     16
+    ],
+    [
+     "Karma",
+     14
+    ],
+    [
+     "Renekton",
+     14
+    ]
+   ]
+  },
+  "Elyoya": {
+   "gol_id": "2719",
+   "role": "JGL",
+   "champions": [
+    [
+     "Vi",
+     64
+    ],
+    [
+     "Lee Sin",
+     44
+    ],
+    [
+     "Sejuani",
+     42
+    ],
+    [
+     "Xin Zhao",
+     37
+    ],
+    [
+     "Jarvan IV",
+     34
+    ],
+    [
+     "Wukong",
+     31
+    ],
+    [
+     "Pantheon",
+     28
+    ],
+    [
+     "Graves",
+     27
+    ],
+    [
+     "Viego",
+     20
+    ],
+    [
+     "Poppy",
+     19
+    ]
+   ]
+  },
+  "jojopyun": {
+   "gol_id": "3544",
+   "role": "MID",
+   "champions": [
+    [
+     "Azir",
+     49
+    ],
+    [
+     "Ryze",
+     44
+    ],
+    [
+     "Ahri",
+     43
+    ],
+    [
+     "Yone",
+     35
+    ],
+    [
+     "Sylas",
+     33
+    ],
+    [
+     "Taliyah",
+     30
+    ],
+    [
+     "Akali",
+     28
+    ],
+    [
+     "Viktor",
+     25
+    ],
+    [
+     "Corki",
+     21
+    ],
+    [
+     "LeBlanc",
+     19
+    ]
+   ]
+  },
+  "Supa": {
+   "gol_id": "2717",
+   "role": "BOT",
+   "champions": [
+    [
+     "Ezreal",
+     78
+    ],
+    [
+     "Kai'Sa",
+     70
+    ],
+    [
+     "Zeri",
+     48
+    ],
+    [
+     "Xayah",
+     44
+    ],
+    [
+     "Aphelios",
+     39
+    ],
+    [
+     "Ashe",
+     37
+    ],
+    [
+     "Jinx",
+     33
+    ],
+    [
+     "Kalista",
+     30
+    ],
+    [
+     "Caitlyn",
+     26
+    ],
+    [
+     "Sivir",
+     26
+    ]
+   ]
+  },
+  "Alvaro": {
+   "gol_id": "4634",
+   "role": "SUP",
+   "champions": [
+    [
+     "Rakan",
+     65
+    ],
+    [
+     "Rell",
+     52
+    ],
+    [
+     "Nautilus",
+     51
+    ],
+    [
+     "Braum",
+     39
+    ],
+    [
+     "Renata Glasc",
+     35
+    ],
+    [
+     "Alistar",
+     34
+    ],
+    [
+     "Neeko",
+     22
+    ],
+    [
+     "Lulu",
+     17
+    ],
+    [
+     "Bard",
+     14
+    ],
+    [
+     "Leona",
+     14
+    ]
+   ]
+  },
+  "Canna": {
+   "gol_id": "2671",
+   "role": "TOP",
+   "champions": [
+    [
+     "Gnar",
+     75
+    ],
+    [
+     "Jayce",
+     72
+    ],
+    [
+     "Renekton",
+     66
+    ],
+    [
+     "Rumble",
+     56
+    ],
+    [
+     "Kennen",
+     31
+    ],
+    [
+     "Sion",
+     29
+    ],
+    [
+     "Gwen",
+     26
+    ],
+    [
+     "Ambessa",
+     26
+    ],
+    [
+     "K'Sante",
+     25
+    ],
+    [
+     "Ornn",
+     25
+    ]
+   ]
+  },
+  "Yike": {
+   "gol_id": "3406",
+   "role": "JGL",
+   "champions": [
+    [
+     "Vi",
+     60
+    ],
+    [
+     "Xin Zhao",
+     55
+    ],
+    [
+     "Maokai",
+     46
+    ],
+    [
+     "Viego",
+     43
+    ],
+    [
+     "Wukong",
+     34
+    ],
+    [
+     "Jarvan IV",
+     34
+    ],
+    [
+     "Sejuani",
+     26
+    ],
+    [
+     "Kha'Zix",
+     20
+    ],
+    [
+     "Lillia",
+     20
+    ],
+    [
+     "Pantheon",
+     19
+    ]
+   ]
+  },
+  "Kyeahoo": {
+   "gol_id": "5264",
+   "role": "MID",
+   "champions": [
+    [
+     "Azir",
+     52
+    ],
+    [
+     "Taliyah",
+     31
+    ],
+    [
+     "Ryze",
+     26
+    ],
+    [
+     "Ahri",
+     23
+    ],
+    [
+     "Orianna",
+     22
+    ],
+    [
+     "Viktor",
+     21
+    ],
+    [
+     "Tristana",
+     19
+    ],
+    [
+     "Hwei",
+     18
+    ],
+    [
+     "Aurora",
+     17
+    ],
+    [
+     "Annie",
+     14
+    ]
+   ]
+  },
+  "Caliste": {
+   "gol_id": "4900",
+   "role": "BOT",
+   "champions": [
+    [
+     "Ezreal",
+     44
+    ],
+    [
+     "Zeri",
+     39
+    ],
+    [
+     "Varus",
+     30
+    ],
+    [
+     "Ashe",
+     25
+    ],
+    [
+     "Xayah",
+     23
+    ],
+    [
+     "Kai'Sa",
+     22
+    ],
+    [
+     "Miss Fortune",
+     21
+    ],
+    [
+     "Jhin",
+     20
+    ],
+    [
+     "Caitlyn",
+     20
+    ],
+    [
+     "Corki",
+     18
+    ]
+   ]
+  },
+  "Busio": {
+   "gol_id": "4500",
+   "role": "SUP",
+   "champions": [
+    [
+     "Rakan",
+     46
+    ],
+    [
+     "Nautilus",
+     42
+    ],
+    [
+     "Alistar",
+     37
+    ],
+    [
+     "Leona",
+     35
+    ],
+    [
+     "Bard",
+     30
+    ],
+    [
+     "Lulu",
+     29
+    ],
+    [
+     "Nami",
+     29
+    ],
+    [
+     "Renata Glasc",
+     28
+    ],
+    [
+     "Rell",
+     25
+    ],
+    [
+     "Neeko",
+     21
+    ]
+   ]
+  },
+  "Morgan": {
+   "gol_id": "2545",
+   "role": "TOP",
+   "champions": [
+    [
+     "Renekton",
+     112
+    ],
+    [
+     "Ornn",
+     50
+    ],
+    [
+     "K'Sante",
+     45
+    ],
+    [
+     "Gnar",
+     45
+    ],
+    [
+     "Jax",
+     38
+    ],
+    [
+     "Rumble",
+     37
+    ],
+    [
+     "Aatrox",
+     33
+    ],
+    [
+     "Sion",
+     33
+    ],
+    [
+     "Gragas",
+     32
+    ],
+    [
+     "Gwen",
+     31
+    ]
+   ]
+  },
+  "Josedeodo": {
+   "gol_id": "1364",
+   "role": "JGL",
+   "champions": [
+    [
+     "Lee Sin",
+     73
+    ],
+    [
+     "Vi",
+     41
+    ],
+    [
+     "Jarvan IV",
+     36
+    ],
+    [
+     "Xin Zhao",
+     36
+    ],
+    [
+     "Sejuani",
+     32
+    ],
+    [
+     "Viego",
+     26
+    ],
+    [
+     "Wukong",
+     26
+    ],
+    [
+     "Maokai",
+     25
+    ],
+    [
+     "Nocturne",
+     17
+    ],
+    [
+     "Pantheon",
+     16
+    ]
+   ]
+  },
+  "Quid": {
+   "gol_id": "4246",
+   "role": "MID",
+   "champions": [
+    [
+     "Azir",
+     40
+    ],
+    [
+     "Yone",
+     32
+    ],
+    [
+     "Ryze",
+     31
+    ],
+    [
+     "Ahri",
+     27
+    ],
+    [
+     "Sylas",
+     26
+    ],
+    [
+     "Orianna",
+     24
+    ],
+    [
+     "Taliyah",
+     21
+    ],
+    [
+     "Akali",
+     19
+    ],
+    [
+     "Aurora",
+     17
+    ],
+    [
+     "Viktor",
+     17
+    ]
+   ]
+  },
+  "Yeon": {
+   "gol_id": "3537",
+   "role": "BOT",
+   "champions": [
+    [
+     "Ezreal",
+     68
+    ],
+    [
+     "Aphelios",
+     57
+    ],
+    [
+     "Varus",
+     54
+    ],
+    [
+     "Kai'Sa",
+     45
+    ],
+    [
+     "Xayah",
+     45
+    ],
+    [
+     "Zeri",
+     36
+    ],
+    [
+     "Lucian",
+     35
+    ],
+    [
+     "Kalista",
+     34
+    ],
+    [
+     "Ashe",
+     25
+    ],
+    [
+     "Jhin",
+     19
+    ]
+   ]
+  },
+  "CoreJJ": {
+   "gol_id": "257",
+   "role": "SUP",
+   "champions": [
+    [
+     "Rakan",
+     112
+    ],
+    [
+     "Tahm Kench",
+     85
+    ],
+    [
+     "Nautilus",
+     75
+    ],
+    [
+     "Braum",
+     73
+    ],
+    [
+     "Rell",
+     61
+    ],
+    [
+     "Alistar",
+     45
+    ],
+    [
+     "Leona",
+     40
+    ],
+    [
+     "Karma",
+     39
+    ],
+    [
+     "Taric",
+     38
+    ],
+    [
+     "Thresh",
+     37
+    ]
+   ]
+  },
+  "Dhokla": {
+   "gol_id": "1135",
+   "role": "TOP",
+   "champions": [
+    [
+     "Renekton",
+     58
+    ],
+    [
+     "K'Sante",
+     45
+    ],
+    [
+     "Jayce",
+     44
+    ],
+    [
+     "Rumble",
+     37
+    ],
+    [
+     "Aatrox",
+     35
+    ],
+    [
+     "Gnar",
+     28
+    ],
+    [
+     "Sion",
+     25
+    ],
+    [
+     "Gwen",
+     23
+    ],
+    [
+     "Gangplank",
+     22
+    ],
+    [
+     "Camille",
+     22
+    ]
+   ]
+  },
+  "Inspired": {
+   "gol_id": "1501",
+   "role": "JGL",
+   "champions": [
+    [
+     "Xin Zhao",
+     60
+    ],
+    [
+     "Sejuani",
+     51
+    ],
+    [
+     "Lee Sin",
+     37
+    ],
+    [
+     "Wukong",
+     36
+    ],
+    [
+     "Jarvan IV",
+     36
+    ],
+    [
+     "Viego",
+     33
+    ],
+    [
+     "Vi",
+     29
+    ],
+    [
+     "Lillia",
+     28
+    ],
+    [
+     "Nocturne",
+     22
+    ],
+    [
+     "Skarner",
+     21
+    ]
+   ]
+  },
+  "Saint": {
+   "gol_id": "5123",
+   "role": "MID",
+   "champions": [
+    [
+     "Azir",
+     32
+    ],
+    [
+     "Corki",
+     19
+    ],
+    [
+     "Sylas",
+     19
+    ],
+    [
+     "Ahri",
+     19
+    ],
+    [
+     "Ryze",
+     18
+    ],
+    [
+     "Taliyah",
+     18
+    ],
+    [
+     "Tristana",
+     15
+    ],
+    [
+     "Akali",
+     14
+    ],
+    [
+     "Yone",
+     14
+    ],
+    [
+     "Viktor",
+     14
+    ]
+   ]
+  },
+  "Berserker": {
+   "gol_id": "3322",
+   "role": "BOT",
+   "champions": [
+    [
+     "Zeri",
+     45
+    ],
+    [
+     "Kai'Sa",
+     42
+    ],
+    [
+     "Lucian",
+     39
+    ],
+    [
+     "Varus",
+     32
+    ],
+    [
+     "Ezreal",
+     32
+    ],
+    [
+     "Aphelios",
+     26
+    ],
+    [
+     "Xayah",
+     22
+    ],
+    [
+     "Yunara",
+     20
+    ],
+    [
+     "Ashe",
+     20
+    ],
+    [
+     "Miss Fortune",
+     18
+    ]
+   ]
+  },
+  "Isles": {
+   "gol_id": "2358",
+   "role": "SUP",
+   "champions": [
+    [
+     "Nautilus",
+     55
+    ],
+    [
+     "Alistar",
+     30
+    ],
+    [
+     "Leona",
+     30
+    ],
+    [
+     "Karma",
+     30
+    ],
+    [
+     "Lulu",
+     28
+    ],
+    [
+     "Rakan",
+     26
+    ],
+    [
+     "Bard",
+     23
+    ],
+    [
+     "Rell",
+     21
+    ],
+    [
+     "Braum",
+     19
+    ],
+    [
+     "Thresh",
+     17
+    ]
+   ]
+  },
+  "Thanatos": {
+   "gol_id": "3434",
+   "role": "TOP",
+   "champions": [
+    [
+     "Renekton",
+     81
+    ],
+    [
+     "Gnar",
+     68
+    ],
+    [
+     "K'Sante",
+     47
+    ],
+    [
+     "Gwen",
+     26
+    ],
+    [
+     "Rumble",
+     24
+    ],
+    [
+     "Ambessa",
+     19
+    ],
+    [
+     "Jayce",
+     17
+    ],
+    [
+     "Jax",
+     16
+    ],
+    [
+     "Camille",
+     14
+    ],
+    [
+     "Gragas",
+     14
+    ]
+   ]
+  },
+  "Blaber": {
+   "gol_id": "1634",
+   "role": "JGL",
+   "champions": [
+    [
+     "Sejuani",
+     48
+    ],
+    [
+     "Lee Sin",
+     48
+    ],
+    [
+     "Xin Zhao",
+     38
+    ],
+    [
+     "Wukong",
+     33
+    ],
+    [
+     "Jarvan IV",
+     33
+    ],
+    [
+     "Nocturne",
+     32
+    ],
+    [
+     "Kindred",
+     29
+    ],
+    [
+     "Vi",
+     28
+    ],
+    [
+     "Maokai",
+     26
+    ],
+    [
+     "Gragas",
+     24
+    ]
+   ]
+  },
+  "Loki": {
+   "gol_id": "4861",
+   "role": "MID",
+   "champions": [
+    [
+     "Azir",
+     33
+    ],
+    [
+     "Yone",
+     29
+    ],
+    [
+     "Taliyah",
+     23
+    ],
+    [
+     "Orianna",
+     16
+    ],
+    [
+     "Sylas",
+     15
+    ],
+    [
+     "Tristana",
+     15
+    ],
+    [
+     "Corki",
+     14
+    ],
+    [
+     "Akali",
+     12
+    ],
+    [
+     "Aurora",
+     11
+    ],
+    [
+     "Ahri",
+     10
+    ]
+   ]
+  },
+  "Tactical": {
+   "gol_id": "1979",
+   "role": "BOT",
+   "champions": [
+    [
+     "Ezreal",
+     52
+    ],
+    [
+     "Varus",
+     34
+    ],
+    [
+     "Kalista",
+     30
+    ],
+    [
+     "Aphelios",
+     30
+    ],
+    [
+     "Lucian",
+     29
+    ],
+    [
+     "Xayah",
+     26
+    ],
+    [
+     "Kai'Sa",
+     22
+    ],
+    [
+     "Sivir",
+     21
+    ],
+    [
+     "Zeri",
+     20
+    ],
+    [
+     "Miss Fortune",
+     19
+    ]
+   ]
+  },
+  "Vulcan": {
+   "gol_id": "1301",
+   "role": "SUP",
+   "champions": [
+    [
+     "Nautilus",
+     85
+    ],
+    [
+     "Alistar",
+     76
+    ],
+    [
+     "Leona",
+     69
+    ],
+    [
+     "Rakan",
+     66
+    ],
+    [
+     "Tahm Kench",
+     61
+    ],
+    [
+     "Braum",
+     40
+    ],
+    [
+     "Thresh",
+     37
+    ],
+    [
+     "Bard",
+     34
+    ],
+    [
+     "Lulu",
+     26
+    ],
+    [
+     "Nami",
+     25
+    ]
+   ]
+  },
+  "Pun": {
+   "gol_id": "2799",
+   "role": "TOP",
+   "champions": [
+    [
+     "Renekton",
+     56
+    ],
+    [
+     "Jax",
+     41
+    ],
+    [
+     "Sion",
+     37
+    ],
+    [
+     "Ornn",
+     30
+    ],
+    [
+     "K'Sante",
+     27
+    ],
+    [
+     "Rumble",
+     26
+    ],
+    [
+     "Gwen",
+     20
+    ],
+    [
+     "Gnar",
+     16
+    ],
+    [
+     "Udyr",
+     14
+    ],
+    [
+     "Gragas",
+     14
+    ]
+   ]
+  },
+  "Hizto": {
+   "gol_id": "5960",
+   "role": "JGL",
+   "champions": [
+    [
+     "Jarvan IV",
+     27
+    ],
+    [
+     "Vi",
+     24
+    ],
+    [
+     "Xin Zhao",
+     23
+    ],
+    [
+     "Wukong",
+     16
+    ],
+    [
+     "Naafiri",
+     14
+    ],
+    [
+     "Lee Sin",
+     13
+    ],
+    [
+     "Pantheon",
+     11
+    ],
+    [
+     "Qiyana",
+     9
+    ],
+    [
+     "Nocturne",
+     8
+    ],
+    [
+     "Viego",
+     8
+    ]
+   ]
+  },
+  "Dire": {
+   "gol_id": "5961",
+   "role": "MID",
+   "champions": [
+    [
+     "Ahri",
+     26
+    ],
+    [
+     "Aurora",
+     25
+    ],
+    [
+     "Ryze",
+     24
+    ],
+    [
+     "Galio",
+     17
+    ],
+    [
+     "Orianna",
+     16
+    ],
+    [
+     "Sylas",
+     12
+    ],
+    [
+     "Annie",
+     11
+    ],
+    [
+     "Akali",
+     9
+    ],
+    [
+     "Viktor",
+     7
+    ],
+    [
+     "Cassiopeia",
+     5
+    ]
+   ]
+  },
+  "Eddie": {
+   "gol_id": "3245",
+   "role": "BOT",
+   "champions": [
+    [
+     "Kai'Sa",
+     47
+    ],
+    [
+     "Xayah",
+     44
+    ],
+    [
+     "Ezreal",
+     35
+    ],
+    [
+     "Jhin",
+     32
+    ],
+    [
+     "Varus",
+     30
+    ],
+    [
+     "Zeri",
+     28
+    ],
+    [
+     "Aphelios",
+     27
+    ],
+    [
+     "Jinx",
+     26
+    ],
+    [
+     "Miss Fortune",
+     19
+    ],
+    [
+     "Sivir",
+     17
+    ]
+   ]
+  },
+  "Bie": {
+   "gol_id": "1461",
+   "role": "SUP",
+   "champions": [
+    [
+     "Nautilus",
+     74
+    ],
+    [
+     "Rakan",
+     59
+    ],
+    [
+     "Alistar",
+     50
+    ],
+    [
+     "Rell",
+     47
+    ],
+    [
+     "Braum",
+     43
+    ],
+    [
+     "Thresh",
+     41
+    ],
+    [
+     "Leona",
+     37
+    ],
+    [
+     "Renata Glasc",
+     23
+    ],
+    [
+     "Karma",
+     23
+    ],
+    [
+     "Lux",
+     15
+    ]
+   ]
+  },
+  "Rest": {
+   "gol_id": "1172",
+   "role": "TOP",
+   "champions": [
+    [
+     "Renekton",
+     77
+    ],
+    [
+     "Gnar",
+     70
+    ],
+    [
+     "K'Sante",
+     50
+    ],
+    [
+     "Rumble",
+     37
+    ],
+    [
+     "Aatrox",
+     35
+    ],
+    [
+     "Gangplank",
+     30
+    ],
+    [
+     "Jayce",
+     28
+    ],
+    [
+     "Ornn",
+     28
+    ],
+    [
+     "Camille",
+     23
+    ],
+    [
+     "Gwen",
+     22
+    ]
+   ]
+  },
+  "Shad0w": {
+   "gol_id": "2588",
+   "role": "JGL",
+   "champions": [
+    [
+     "Xin Zhao",
+     49
+    ],
+    [
+     "Lee Sin",
+     45
+    ],
+    [
+     "Pantheon",
+     30
+    ],
+    [
+     "Sejuani",
+     30
+    ],
+    [
+     "Viego",
+     27
+    ],
+    [
+     "Wukong",
+     26
+    ],
+    [
+     "Vi",
+     24
+    ],
+    [
+     "Jarvan IV",
+     19
+    ],
+    [
+     "Naafiri",
+     16
+    ],
+    [
+     "Maokai",
+     15
+    ]
+   ]
+  },
+  "Pout": {
+   "gol_id": "4251",
+   "role": "MID",
+   "champions": [
+    [
+     "Akali",
+     16
+    ],
+    [
+     "Ryze",
+     15
+    ],
+    [
+     "Syndra",
+     10
+    ],
+    [
+     "Sylas",
+     10
+    ],
+    [
+     "Aurora",
+     9
+    ],
+    [
+     "Ahri",
+     8
+    ],
+    [
+     "Orianna",
+     6
+    ],
+    [
+     "Yone",
+     6
+    ],
+    [
+     "Viktor",
+     5
+    ],
+    [
+     "Taliyah",
+     5
+    ]
+   ]
+  },
+  "Doggo": {
+   "gol_id": "3737",
+   "role": "BOT",
+   "champions": [
+    [
+     "Aphelios",
+     63
+    ],
+    [
+     "Kai'Sa",
+     60
+    ],
+    [
+     "Ezreal",
+     53
+    ],
+    [
+     "Lucian",
+     39
+    ],
+    [
+     "Zeri",
+     32
+    ],
+    [
+     "Kalista",
+     32
+    ],
+    [
+     "Jinx",
+     29
+    ],
+    [
+     "Xayah",
+     25
+    ],
+    [
+     "Varus",
+     24
+    ],
+    [
+     "Ashe",
+     20
+    ]
+   ]
+  },
+  "Kino": {
+   "gol_id": "7011",
+   "role": "SUP",
+   "champions": [
+    [
+     "Nautilus",
+     9
+    ],
+    [
+     "Lulu",
+     8
+    ],
+    [
+     "Milio",
+     7
+    ],
+    [
+     "Alistar",
+     5
+    ],
+    [
+     "Karma",
+     5
+    ],
+    [
+     "Camille",
+     4
+    ],
+    [
+     "Neeko",
+     3
+    ],
+    [
+     "Rell",
+     3
+    ],
+    [
+     "Nami",
+     3
+    ],
+    [
+     "Leona",
+     2
+    ]
+   ]
+  },
+  "Kratos": {
+   "gol_id": "5169",
+   "role": "TOP",
+   "champions": [
+    [
+     "K'Sante",
+     39
+    ],
+    [
+     "Ambessa",
+     24
+    ],
+    [
+     "Gnar",
+     14
+    ],
+    [
+     "Aatrox",
+     12
+    ],
+    [
+     "Sion",
+     9
+    ],
+    [
+     "Rumble",
+     9
+    ],
+    [
+     "Jax",
+     8
+    ],
+    [
+     "Udyr",
+     7
+    ],
+    [
+     "Jayce",
+     7
+    ],
+    [
+     "Gwen",
+     7
+    ]
+   ]
+  },
+  "Gury": {
+   "gol_id": "5156",
+   "role": "JGL",
+   "champions": [
+    [
+     "Maokai",
+     29
+    ],
+    [
+     "Lee Sin",
+     28
+    ],
+    [
+     "Vi",
+     22
+    ],
+    [
+     "Wukong",
+     21
+    ],
+    [
+     "Nocturne",
+     20
+    ],
+    [
+     "Zyra",
+     17
+    ],
+    [
+     "Jarvan IV",
+     13
+    ],
+    [
+     "Sejuani",
+     12
+    ],
+    [
+     "Viego",
+     11
+    ],
+    [
+     "Gragas",
+     10
+    ]
+   ]
+  },
+  "Chika": {
+   "gol_id": "6420",
+   "role": "MID",
+   "champions": [
+    [
+     "Galio",
+     6
+    ],
+    [
+     "Cassiopeia",
+     6
+    ],
+    [
+     "Hwei",
+     6
+    ],
+    [
+     "Yone",
+     6
+    ],
+    [
+     "Ryze",
+     5
+    ],
+    [
+     "Sylas",
+     5
+    ],
+    [
+     "Annie",
+     5
+    ],
+    [
+     "Taliyah",
+     4
+    ],
+    [
+     "Aurora",
+     4
+    ],
+    [
+     "Ahri",
+     3
+    ]
+   ]
+  },
+  "Harky": {
+   "gol_id": "5166",
+   "role": "BOT",
+   "champions": [
+    [
+     "Ezreal",
+     22
+    ],
+    [
+     "Ashe",
+     13
+    ],
+    [
+     "Corki",
+     11
+    ],
+    [
+     "Lucian",
+     11
+    ],
+    [
+     "Varus",
+     9
+    ],
+    [
+     "Jhin",
+     8
+    ],
+    [
+     "Caitlyn",
+     7
+    ],
+    [
+     "Kai'Sa",
+     6
+    ],
+    [
+     "Xayah",
+     5
+    ],
+    [
+     "Kalista",
+     4
+    ]
+   ]
+  },
+  "Siuloong": {
+   "gol_id": "5913",
+   "role": "SUP",
+   "champions": [
+    [
+     "Alistar",
+     16
+    ],
+    [
+     "Nautilus",
+     15
+    ],
+    [
+     "Pyke",
+     14
+    ],
+    [
+     "Karma",
+     14
+    ],
+    [
+     "Seraphine",
+     13
+    ],
+    [
+     "Leona",
+     10
+    ],
+    [
+     "Rakan",
+     8
+    ],
+    [
+     "Rell",
+     8
+    ],
+    [
+     "Poppy",
+     7
+    ],
+    [
+     "Braum",
+     6
+    ]
+   ]
+  },
+  "Zest": {
+   "gol_id": "4244",
+   "role": "TOP",
+   "champions": [
+    [
+     "Gnar",
+     58
+    ],
+    [
+     "K'Sante",
+     41
+    ],
+    [
+     "Kennen",
+     31
+    ],
+    [
+     "Gwen",
+     23
+    ],
+    [
+     "Jayce",
+     23
+    ],
+    [
+     "Renekton",
+     23
+    ],
+    [
+     "Rumble",
+     22
+    ],
+    [
+     "Aatrox",
+     14
+    ],
+    [
+     "Ambessa",
+     13
+    ],
+    [
+     "Aurora",
+     11
+    ]
+   ]
+  },
+  "Curse": {
+   "gol_id": "5274",
+   "role": "JGL",
+   "champions": [
+    [
+     "Xin Zhao",
+     28
+    ],
+    [
+     "Sejuani",
+     26
+    ],
+    [
+     "Vi",
+     25
+    ],
+    [
+     "Pantheon",
+     20
+    ],
+    [
+     "Nocturne",
+     20
+    ],
+    [
+     "Maokai",
+     16
+    ],
+    [
+     "Jarvan IV",
+     15
+    ],
+    [
+     "Wukong",
+     10
+    ],
+    [
+     "Ivern",
+     10
+    ],
+    [
+     "Skarner",
+     9
+    ]
+   ]
+  },
+  "Feisty": {
+   "gol_id": "4234",
+   "role": "MID",
+   "champions": [
+    [
+     "Azir",
+     54
+    ],
+    [
+     "Ryze",
+     46
+    ],
+    [
+     "Taliyah",
+     44
+    ],
+    [
+     "Orianna",
+     40
+    ],
+    [
+     "Syndra",
+     35
+    ],
+    [
+     "Ahri",
+     34
+    ],
+    [
+     "Viktor",
+     28
+    ],
+    [
+     "Sylas",
+     12
+    ],
+    [
+     "Akali",
+     12
+    ],
+    [
+     "LeBlanc",
+     11
+    ]
+   ]
+  },
+  "Duduhh": {
+   "gol_id": "5786",
+   "role": "BOT",
+   "champions": [
+    [
+     "Corki",
+     16
+    ],
+    [
+     "Lucian",
+     14
+    ],
+    [
+     "Ezreal",
+     14
+    ],
+    [
+     "Sivir",
+     13
+    ],
+    [
+     "Varus",
+     9
+    ],
+    [
+     "Caitlyn",
+     9
+    ],
+    [
+     "Yunara",
+     7
+    ],
+    [
+     "Xayah",
+     6
+    ],
+    [
+     "Zeri",
+     5
+    ],
+    [
+     "Ziggs",
+     5
+    ]
+   ]
+  },
+  "Ackerman": {
+   "gol_id": "3640",
+   "role": "SUP",
+   "champions": [
+    [
+     "Nautilus",
+     58
+    ],
+    [
+     "Rakan",
+     38
+    ],
+    [
+     "Alistar",
+     35
+    ],
+    [
+     "Rell",
+     33
+    ],
+    [
+     "Leona",
+     21
+    ],
+    [
+     "Nami",
+     19
+    ],
+    [
+     "Braum",
+     17
+    ],
+    [
+     "Renata Glasc",
+     16
+    ],
+    [
+     "Tahm Kench",
+     14
+    ],
+    [
+     "Karma",
+     14
+    ]
+   ]
+  },
+  "Guigo": {
+   "gol_id": "3116",
+   "role": "TOP",
+   "champions": [
+    [
+     "Gwen",
+     39
+    ],
+    [
+     "K'Sante",
+     36
+    ],
+    [
+     "Gnar",
+     33
+    ],
+    [
+     "Renekton",
+     31
+    ],
+    [
+     "Camille",
+     30
+    ],
+    [
+     "Sion",
+     29
+    ],
+    [
+     "Ornn",
+     28
+    ],
+    [
+     "Jax",
+     27
+    ],
+    [
+     "Ambessa",
+     21
+    ],
+    [
+     "Aatrox",
+     21
+    ]
+   ]
+  },
+  "Tatu": {
+   "gol_id": "4776",
+   "role": "JGL",
+   "champions": [
+    [
+     "Wukong",
+     35
+    ],
+    [
+     "Xin Zhao",
+     32
+    ],
+    [
+     "Sejuani",
+     27
+    ],
+    [
+     "Maokai",
+     24
+    ],
+    [
+     "Skarner",
+     22
+    ],
+    [
+     "Vi",
+     22
+    ],
+    [
+     "Viego",
+     16
+    ],
+    [
+     "Pantheon",
+     15
+    ],
+    [
+     "Jarvan IV",
+     9
+    ],
+    [
+     "Lillia",
+     9
+    ]
+   ]
+  },
+  "Tutsz": {
+   "gol_id": "2709",
+   "role": "MID",
+   "champions": [
+    [
+     "Ahri",
+     37
+    ],
+    [
+     "Orianna",
+     36
+    ],
+    [
+     "Syndra",
+     32
+    ],
+    [
+     "Azir",
+     30
+    ],
+    [
+     "Ryze",
+     26
+    ],
+    [
+     "Taliyah",
+     25
+    ],
+    [
+     "Akali",
+     20
+    ],
+    [
+     "Viktor",
+     18
+    ],
+    [
+     "LeBlanc",
+     18
+    ],
+    [
+     "Annie",
+     17
+    ]
+   ]
+  },
+  "Ayu": {
+   "gol_id": "4976",
+   "role": "BOT",
+   "champions": [
+    [
+     "Ezreal",
+     30
+    ],
+    [
+     "Ashe",
+     27
+    ],
+    [
+     "Varus",
+     18
+    ],
+    [
+     "Miss Fortune",
+     16
+    ],
+    [
+     "Lucian",
+     16
+    ],
+    [
+     "Yunara",
+     15
+    ],
+    [
+     "Corki",
+     14
+    ],
+    [
+     "Zeri",
+     14
+    ],
+    [
+     "Jhin",
+     13
+    ],
+    [
+     "Kai'Sa",
+     13
+    ]
+   ]
+  },
+  "JoJo": {
+   "gol_id": "2329",
+   "role": "SUP",
+   "champions": [
+    [
+     "Rakan",
+     52
+    ],
+    [
+     "Nautilus",
+     51
+    ],
+    [
+     "Leona",
+     50
+    ],
+    [
+     "Alistar",
+     40
+    ],
+    [
+     "Rell",
+     36
+    ],
+    [
+     "Lulu",
+     29
+    ],
+    [
+     "Nami",
+     21
+    ],
+    [
+     "Karma",
+     20
+    ],
+    [
+     "Seraphine",
+     20
+    ],
+    [
+     "Yuumi",
+     17
+    ]
+   ]
+  }
+ }
+}
